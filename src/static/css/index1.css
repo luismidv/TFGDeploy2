@@ -47,15 +47,15 @@
 }
 
 .search-img {
-    position: absolute;
-    left: 550px;
-    top: 25px;
+    position: relative;
+    left: 350px;
+    top: -25px;
     width: 50px;
     height: 50px;
 }
 .room-search{
-    position: absolute;
-    left: 220px;
+    position: relative;
+    left: 0px;
     top: 25px;
     width:400px;
     height: 50px;
@@ -70,9 +70,10 @@
     color:rgb(142, 142, 145);
 }
 .submit-search{
-    position: absolute;
-    left: 660px;
-    top: 5px;
+    position: relative;
+    top: -25px;
+    left: 350px;
+    
     width: 50px;
     height: 50px;
 }
@@ -410,8 +411,8 @@ select{
     flex-direction: row;
     position: relative;
     top: 20px;
-    width: 800px;
-    left:785px;
+    width: 600px;
+    left:700px;
 }
 
 
@@ -444,8 +445,10 @@ select{
 
 .divsearch{
     position: relative;
-    top: -220px;
-    left: -20px;
+    width:400px;
+    height:100px;
+    top: -50px;
+    left: 190px;
 }
 
 
@@ -513,3 +516,10 @@ select{
 .last-div{
     height: 200px;
 }
+
+.responsive-text::after {
+    content: "Discover our crazy offers";
+    display: none; /* Hidden by default */
+  }
+
+  

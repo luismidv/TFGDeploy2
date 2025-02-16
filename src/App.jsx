@@ -63,22 +63,21 @@ export function Headers(){
             <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
     
             <form className="search-bar-form ">
-              <div className="menu-div flex flex-wrap justify-center">
-                  <Link className="rooti-button  transition w-full sm:w-1/2 md:w-auto" to="/">
+              <div className="menu-div justify-center">
+                  <Link className="rooti-button" to="/">
                      <img src={houseImage} alt="Home" />
                   </Link>
   
-                  <Link className="rooti-button  transition w-full sm:w-1/2 md:w-auto" to="/rooms">
+                  <Link className="rooti-button " to="/rooms">
                       <img src={bedsImage} alt="Rooms" />
                   </Link>
     
-                  <Link className="rooti-button  transition w-full sm:w-1/2 md:w-auto" to="/profile">
+                  <Link className="rooti-button" to="/profile">
                       
                       <img src={profileImage} alt="Profile" />
                   </Link>
     
-                  <Link className="rooti-button  transition w-full sm:w-1/2 md:w-auto" to="/contact">
-                      
+                  <Link className="rooti-button" to="/contact">
                       <img src={contactImage} alt="Contact" />
                   </Link>
               </div>
@@ -97,7 +96,9 @@ export function Headers(){
     
           <section className="recomendations md:text-left">
             <p className="text-descriptive">Need a room?</p>
-            <p className="text-descriptive-2">Discover our crazy offers & Share with your dream partners</p>
+            <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers </p>
+            <p className="text-descriptive-2 hidden sm:block">Discover our crazy offers & Share with your dream partners </p>
+
             <div className = "text-div"></div>
           </section>
     
