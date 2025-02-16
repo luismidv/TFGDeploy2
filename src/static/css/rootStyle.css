@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.banners-flex{
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    top: 650px;
+    left: 280px;
+    width: 1300px;
+    height: 800px;
+}
+
+.bannerclass{
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    border-radius:15px;
+    border-color: #5b5a5a;
+    
+}
+
+.bannerclass img{
+    width:500px;
+    height:292px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.bannerclass p{
+    position: relative;
+    font-family: "Proxima Nova", system-ui, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    top:40px;
+}
+
+.details {
+    position: relative;
+    display: block;
+    left: 280px;
+    font-family: "Proxima Nova", system-ui, sans-serif;
+    width: 100px;
+    height:50px;
+    background-color: #303ab2;
+    color: white;
+    border-radius: 15px;
+    font-weight: bold;
+    text-align:start;
+    padding-top: 10px;
+    padding-left: 3px;
+}
+
+.details:hover{
+    transition-duration: 0.5s;
+    background-color: white;
+    color:#303ab2;
+    border-color: #303ab2;
+    border-width: 1px;
+}

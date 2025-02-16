@@ -1,0 +1,96 @@
+/* login.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.log-in-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .log-in-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: black;
+  }
+  
+  .form-class {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 700px;
+  }
+  
+  .form-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .label-email,
+  .label-password {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .input-email,
+  .input-password {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .input-email:focus,
+  .input-password:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .log-in-form {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .log-in-form:hover {
+    background-color: #333;
+  }
+
+  .register-button{
+    position: absolute;
+    color:#303ab2;
+    top:600px;
+    left:900px;
+  }
+
+  .link-text-login{
+    color:#303ab2;
+    text-decoration: underline;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .log-in-container {
+      max-width: 100%;
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  
