@@ -5,8 +5,7 @@
 
 #info-container{
     font-family: 'Roboto', sans-serif;
-    position: absolute;
-    display: flex;
+    position: relative;
     top:650px;
     border-radius: 30px;
     width: 1800px;

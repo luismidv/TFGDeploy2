@@ -16,7 +16,9 @@ import profilepic from "./static/media/profilepic.jpg"
 
 export function RoomBannerCall() {
     return(
-        <section id = "room-container">
+        <section id = "room-container" className="grid grid-cols-2 gap-4 md:grid-cols-1">
+        
+
           <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
           rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 

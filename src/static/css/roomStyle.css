@@ -4,7 +4,7 @@
 
 #room-container{
     font-family: 'Roboto', sans-serif;
-    position: absolute;
+    position: relative;
     display: flex;
     top: 600px;
     border-radius: 30px;
