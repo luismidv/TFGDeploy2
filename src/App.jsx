@@ -21,6 +21,7 @@ import bedsImage from './static/media/beds-pillow.svg';
 import profileImage from './static/media/profile.svg';
 import contactImage from './static/media/agenda-phone-number-svgrepo-com.svg';
 import searchImage from './static/media/search-svgrepo-com.svg';
+import Started from './started';
 
 
 export function AppExpo(){
@@ -48,6 +49,7 @@ export function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/inforoom" element={<RoomInfo />} />
+      <Route path="/started" element={<Started />} />
       
     </Routes>
     
@@ -110,34 +112,33 @@ export function Headers(){
 
 export function Footeras(){
   return(
-    <section className="about-us px-4 py-12 md:py-16 lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[700px] transition-transform duration-300">
+  <section className="about-us lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[700px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
   <h1 className="about-us-h1 mb-6">About us</h1>
+    <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+        <strong>Our purpose</strong> <br />
+        Mainly our purpose is to help people <br />
+        have the best experience when <br />sharing a home.
+      </p>
 
-  <div className="last-div space-y-6">
-    <p className="p-div-section">
-      Our purpose <br />
-      Mainly our purpose is to help people <br />
-      have the best experience when <br />sharing a home.
-    </p>
+      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px]  ">
+      <strong>Who are we?</strong> <br />
+        Company created in 2024 as a final <br /> degree project
+        with the idea of <br />improving students' sharing experience.
+      </p>
 
-    <p className="p-div-section">
-      Who are we? <br />
-      Company created in 2024 as a final <br /> degree project
-      with the idea of <br />improving students' sharing experience.
-    </p>
+      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+      <strong>Our team</strong> <br />
+        Our team is composed of 1 person: <br />a computer science 
+        student focused <br />on machine learning.
+      </p>
 
-    <p className="p-div-section">
-      Our team <br />
-      Our team is composed of 1 person: <br />a computer science 
-      student focused <br />on machine learning.
-    </p>
-
-    <p className="p-div-section">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Work with us <br />
-      Feel free to message us via our email or <br />
-      LinkedIn if you’re considering working with us.
-    </p>
+      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+      
+      <strong>Work with us</strong> <br />
+        Feel free to message us via our email or <br />
+        LinkedIn if you’re considering working with us.
+      </p>
   </div>
 </section>
 
