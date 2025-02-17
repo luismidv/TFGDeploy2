@@ -29,7 +29,7 @@ const HomePage = () => {
         </div>
         <div className = "text-section text-center md:text-left relative md:translate-y-0 translate-y-[700px] transition-transform duration-300">
           
-          <Link  to ="/started" className="form-button block lg:translate-y-0 lg:translate-x-[0px] md:translate-y-[220px] md:translate-x-[0px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300">
+          <Link  to ="/started" className="form-button block lg:translate-y-0 lg:translate-x-[-30px] md:translate-y-[220px] md:translate-x-[-30px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300">
             Get started
           </Link>
         </div>
