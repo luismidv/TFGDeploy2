@@ -26,7 +26,7 @@ import Started from './started';
 
 export function AppExpo(){
   return (
-    <div className = "banners-flex grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <Banner image = {roombannerImage1} title = "Room number 1" ></Banner>
       <Banner image = {roombannerImage2} title = "Room number 2"></Banner>
       <Banner image = {roombannerImage3} title = "Room number 3"></Banner> 
