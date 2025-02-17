@@ -5,15 +5,12 @@
 #room-container{
     font-family: 'Roboto', sans-serif;
     position: relative;
-    display: flex;
-    top: 600px;
+    top: 520px;
     border-radius: 30px;
     width: 1800px;
     height: 1300px;
-    left:-220px;
+    left:-50px;
     justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
     padding-bottom: 50px;
     
 }
@@ -81,7 +78,7 @@
 }
 
 .description-p{
-    position: absolute;
+    position: relative;
     top: 350px;
     left: 40px;
     font-size: 18px;
