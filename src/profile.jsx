@@ -88,78 +88,78 @@ const handleSubmit = async(e) => {
           </fieldset>
           <fieldset className="selectors-fieldset">
             <label className="profile-label" htmlFor="worktime">Do you work during the morning, the night or both?</label>
-            <select name="worktime" id="worktime">
+            <select className = "relative left-[50px]" name="worktime" id="worktime">
               <option value="">Both of them</option>
               <option value="morning">Morning</option>
               <option value="night">Night</option>
             </select><br />
             <label className="profile-label" htmlFor="biorythm">
                 When out of work, are you a morning or night person?
-            </label>
-            <select name="biorythm" id="id-biorythm">
+            </label><br />
+            <select className = "relative left-[50px]"name="biorythm" id="id-biorythm">
                 <option value="morning">Morning</option>
                 <option value="night">Night</option>
             </select>
             <br /><br />
 
       <label className="profile-label" htmlFor="studies">
-        Which is your studies level?
+        Which is your studies level? <br />
       </label>
-      <select name="level_studies" id="level_studies">
+      <select className = "relative left-[50px]"name="level_studies" id="level_studies">
         <option value="secondary">Secondary</option>
         <option value="universitary">Universitary</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="reading">
-        Do you usually read?
+        Do you usually read? <br />
       </label>
-      <select name="reading" id="id-read">
+      <select className ="relative left-[50px]" name="reading" id="id-read">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="pets">
-        Are you fine with having pets at home?
+        Are you fine with having pets at home? <br />
       </label>
-      <select name="pets" id="id-pets">
+      <select className ="relative left-[50px]"name="pets" id="id-pets">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="cook">
-        Do you usually cook?
+        Do you usually cook? <br />
       </label>
-      <select name="cook" id="id-cook">
+      <select className ="relative left-[50px]" name="cook" id="id-cook">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="sport">
-        Do you often do sport?
+        Do you often do sport? <br />
       </label>
-      <select name="sport" id="id-sport">
+      <select className ="relative left-[50px]" name="sport" id="id-sport">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="smoker">
-        Do you smoke?
+        Do you smoke? <br />
       </label>
-      <select name="smoker" id="id-smoker">
+      <select  className ="relative left-[50px]" name="smoker" id="id-smoker">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
       <br /><br />
 
       <label className="profile-label" htmlFor="orderliness">
-        Do you consider yourself an organized person?
+        Do you consider yourself an organized person? <br />
       </label>
-      <select name="orderliness" id="id-order">
+      <select className ="relative left-[50px]" name="orderliness" id="id-order">
         <option value="yes">Yes</option>
         <option value="no">No</option>
       </select>
