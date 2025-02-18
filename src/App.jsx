@@ -7,6 +7,10 @@ import roombannerImage3 from './static/media/roombanner3.webp';
 import roombannerImage4 from './static/media/roombanner4.jpg';
 import roombannerImage5 from './static/media/roombanner5.jpg';
 import roombannerImage6 from './static/media/roombanner6.webp';
+import background1 from './static/media/MAINBG/bg1.jpg'
+import background2 from './static/media/MAINBG/bg2.jpg'
+import background3 from './static/media/MAINBG/bg3.jpg'
+import background4 from './static/media/MAINBG/bg4.jpg'
 import { Link } from 'react-router-dom';
 import { Template } from './Roompage';
 import { Route, Routes } from 'react-router-dom';
@@ -22,6 +26,8 @@ import profileImage from './static/media/profile.svg';
 import contactImage from './static/media/agenda-phone-number-svgrepo-com.svg';
 import searchImage from './static/media/search-svgrepo-com.svg';
 import Started from './started';
+import {useState, useEffect } from "react";
+
 
 
 export function AppExpo(){
@@ -41,8 +47,8 @@ export function App() {
   return (
     
     <Routes>
-      
-      <Route path ="/"  element = {<HomePage />} />
+      <Route path ="/"  element = {<Intro />} />
+      <Route path ="/home"  element = {<HomePage />} />
       <Route path="/rooms" element={<Template />} />
       <Route path ="/profile"  element = {<ProfileComponent />} />
       <Route path="/contact" element={<Template />} />
@@ -66,7 +72,7 @@ export function Headers(){
     
             <form className="search-bar-form ">
               <div className="menu-div justify-center">
-                  <Link className="rooti-button" to="/">
+                  <Link className="rooti-button" to="/home">
                      <img src={houseImage} alt="Home" />
                   </Link>
   
@@ -146,6 +152,30 @@ export function Footeras(){
 
   )
 }
+
+export function Intro(){
+  return(
+  <div className = "relative">
+    <div
+      className="h-screen w-screen bg-cover bg-center  opacity-100 brightness-60"
+      style={{ backgroundImage: `url(${background1})` }}>
+      
+    </div>
+    <img className="mainlogo absolute w-[600px] h-[600px] top-[80px] left-[650px]" src={companyImage} alt="Company Logo" />
+    <p className = "slogan-p absolute top-1/2 left-[730px] text-2xl text-[#edf1f3] font-bold"> Improving your house sharing experience</p>
+    <Link 
+  className="absolute w-[300px] h-[70px] top-[530px] left-[610px] 
+             bg-white text-black text-lg font-semibold 
+             flex items-center justify-center rounded-lg shadow-lg" to="/home"> I am searching for a room</Link>
+    <Link 
+  className="absolute w-[300px] h-[70px] top-[530px] left-[990px] 
+             bg-white text-black text-lg font-semibold 
+             flex items-center justify-center rounded-lg shadow-lg" to="/home"> I am renting a room </Link>
+  </div>
+  );
+};
+  
+
     
   
 
