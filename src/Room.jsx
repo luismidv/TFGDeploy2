@@ -130,12 +130,9 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     }
 
 export function RecomInfo() {
-    const features = ["Name","Age","Worktimes","Pets","Cooking","Sport","Smoking", "   Score"]
     return (
         <div>
-            <p style={{ whiteSpace: "pre-wrap", position:"relative", left: "55px", fontWeight: "bold",fontFamily:"sans-serif", color: "#303ab2" }}>
-                {features.join("      ")}
-            </p>
+            
             <RecomLines></RecomLines> <br/><br/>
             <RecomLines></RecomLines> <br/><br/>
             <RecomLines></RecomLines> <br/><br/>
@@ -146,7 +143,7 @@ export function RecomInfo() {
 }
 
 export function RecomLines(){
-    const features = ["Luis","20","Night","Yes","Yes","  Yes","    No", "       70%"]
+    const features = ["Luis","20 y/o","No smoking", "70% compatibility", "someone@example.com"]
     return(
         <section>
             <img className = "profilepic" src = {profilepic}></img>
