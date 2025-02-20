@@ -30,15 +30,15 @@
     font-family: "Proxima Nova", system-ui, sans-serif;
     font-size: 24px;
     font-weight: bold;
-    top: 60px;
-    left: 1185px;
+    top: 70px;
+    left: 905px;
     color: white;
     
 
 }
 .mainlogo{
     position: absolute;
-    left: 130px;
+    left: 330px;
     top:-55px;
     width: 300px;
     height: 300px;
@@ -87,8 +87,8 @@
 .log-in-button {
     position: absolute;
     font-family: "Proxima Nova", system-ui, sans-serif;
-    left: 1530px;
-    top: 30px;
+    left: 1270px;
+    top: 170px;
     width: 105px;
     height: 40px;
     font-weight: bold;
@@ -116,7 +116,7 @@
 .recomendations{
     position: relative;
     top: 320px;
-    left:225px;
+    left:425px;
 }
 
 .text-descriptive {
@@ -392,7 +392,7 @@ select{
     position: relative;
     top: 130px;
     width: 600px;
-    left:150px;
+    left:340px;
 }
  
 
