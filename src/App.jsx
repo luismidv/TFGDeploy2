@@ -153,25 +153,34 @@ export function Footeras(){
   )
 }
 
-export function Intro(){
-  return(
-  <div className = "relative">
-    <div
-      className="h-screen w-screen bg-cover bg-center  opacity-100 brightness-60"
-      style={{ backgroundImage: `url(${background1})` }}>
-      
+export function Intro() {
+  return (
+    <div className="relative h-screen w-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
+        style={{ backgroundImage: `url(${background1})` }}
+      ></div>
+
+      {/* Content Container */}
+      <div className="relative flex flex-col items-center text-center text-white px-6">
+        <img className="w-64 md:w-96 lg:w-[500px] h-auto mb-4" src={companyImage} alt="Company Logo" />
+        <p className="mt-4 text-lg md:text-2xl font-bold">Improving your house sharing experience</p>
+
+        {/* Buttons */}
+        <div className="mb-4 flex flex-col md:flex-row gap-2">
+          <Link 
+            className="w-full md:w-60 h-14 bg-white text-black text-lg font-semibold flex items-center justify-center rounded-lg shadow-lg"
+            to="/home"
+          > I am searching for a room </Link>
+
+          <Link 
+            className="w-full md:w-60 h-14 bg-white text-black text-lg font-semibold flex items-center justify-center rounded-lg shadow-lg"
+            to="/home"
+          > I am renting a room </Link>
+        </div>
+      </div>
     </div>
-    <img className="mainlogo absolute w-[600px] h-[600px] top-[80px] left-[650px]" src={companyImage} alt="Company Logo" />
-    <p className = "slogan-p absolute top-1/2 left-[730px] text-2xl text-[#edf1f3] font-bold"> Improving your house sharing experience</p>
-    <Link 
-  className="absolute w-[300px] h-[70px] top-[530px] left-[610px] 
-             bg-white text-black text-lg font-semibold 
-             flex items-center justify-center rounded-lg shadow-lg" to="/home"> I am searching for a room</Link>
-    <Link 
-  className="absolute w-[300px] h-[70px] top-[530px] left-[990px] 
-             bg-white text-black text-lg font-semibold 
-             flex items-center justify-center rounded-lg shadow-lg" to="/home"> I am renting a room </Link>
-  </div>
   );
 };
   

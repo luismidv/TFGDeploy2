@@ -92,7 +92,7 @@ const handleSubmit = async(e) => {
               <option value="">Both of them</option>
               <option value="morning">Morning</option>
               <option value="night">Night</option>
-            </select><br />
+            </select><br /> <br />
             <label className="profile-label" htmlFor="biorythm">
                 When out of work, are you a morning or night person?
             </label><br />
