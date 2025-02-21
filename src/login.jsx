@@ -48,49 +48,20 @@ const validateForm = () => {
     sendBackendData(email, password);
 };
 
-const getCookie = (name) => {
-  let cookieValue = null;
-  if (document.cookie && document.cookie !== "") {
-      const cookies = document.cookie.split(";");
-      for (let i = 0; i < cookies.length; i++) {
-          const cookie = cookies[i].trim();
-          if (cookie.startsWith(name + "=")) {
-              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-              break;
-          }
-      }
-  }
-  return cookieValue;
-};
 
-const checkCookies = (csrf) => {
-    const cookies = document.cookie;
-    if (cookies) {
-        console.log("Cookies are present:", cookies);
-    } else {
-        console.log("No cookies found.");
-    }
 
-    if (csrf) {
-        console.log("CSRF token is present:", csrf);
-    } else {
-        console.log("No CSRF token found.");
-    }
-};
+
 
 const sendBackendData = async (email, password) => {
     
     const data = { email, password };
-    const csrfToken = getCookie('csrfToken');
-    console.log("csrfToken",csrfToken)
     try {
-        checkCookies(csrfToken);
         console.log("Prepare to fech")
         const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': csrfToken,
+                
             },
             body: JSON.stringify(data),
             credentials: 'include'
