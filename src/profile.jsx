@@ -47,6 +47,21 @@ export function ProfileForm(){
         organized:"",
     });
 
+const fetchCSRFToken = async() => {
+  try{
+    const response = await fetch("https://tfgserver.onrender.com/csrf/", {
+      credentials : 'include',
+    });
+  
+
+    const data = await response.json();
+    console.log("Fetched CSRF Token: ", data.csrfToken)
+    return data.csrfToken;
+  }catch(error) {
+    console.error("Failed to fetch Token: ", error);
+    return null;
+  }
+}
 
 const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,12 +73,33 @@ const getCookie = (name) => {
   if (parts.length === 2) return parts.pop().split(';').shift();
 };
 
+
+
+const checkCookies = (csrf) => {
+  const cookies = document.cookie;
+  if (cookies) {
+      console.log("Cookies are present:", cookies);
+  } else {
+      console.log("No cookies found.");
+  }
+
+  if (csrf) {
+      console.log("CSRF token is present:", csrf);
+  } else {
+      console.log("No CSRF token found.");
+  }
+};
+
 const handleSubmit = async(e) => {
     e.preventDefault();
-    const csrfToken = getCookie('csrfToken');
 
+    const csrfToken = await fetchCSRFToken();  // Fetch token before submission
+    if (!csrfToken){
+      alert("Failed to get Token");
+      return ;
+    }
     try{
-      console.log(formData);
+      
         const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
           method: "POST",
           headers: {
@@ -71,7 +107,7 @@ const handleSubmit = async(e) => {
             'X-CSRFToken': csrfToken,
           },
           body: JSON.stringify(formData),
-          credentials: 'include'
+          credentials: 'include',
 
     });
     if (!response.ok) {
