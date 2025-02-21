@@ -74,7 +74,14 @@ const handleSubmit = async(e) => {
           credentials: 'include'
 
     });
-
+    if (!response.ok) {
+      console.error("❌ Server responded with an error:", response.status, response.statusText);
+      const errorText = await response.text();
+      console.error("❌ Error details:", errorText);
+  } else {
+      const result = await response.json();
+      console.log("🎉 Success! Response from backend:", result);
+  } 
       const result = await response.json();
       alert("Form submitted successfully");
     }catch(error){

@@ -71,8 +71,6 @@ const checkCookies = (csrf) => {
 
 const sendBackendData = async (email, password) => {
     
-    console.log("Email: ", email)
-    console.log("Password:", password)
     const data = { email, password };
     const csrfToken = getCookie('csrfToken');
     console.log("csrfToken",csrfToken)
