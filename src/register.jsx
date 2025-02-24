@@ -69,7 +69,8 @@ const RegisterPage = () => {
         
         console.log("Email: ", email)
         console.log("Password:", password)
-        const data = { email, password, username };
+        const type = "Register";
+        const data = { email, password, username, type };
         const csrfToken = getCookie('csrfToken');
         console.log("csrfToken",csrfToken)
         try {
