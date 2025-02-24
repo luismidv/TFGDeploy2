@@ -67,34 +67,28 @@ const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 }
 
-
-
-
-
-
 const handleSubmit = async(e) => {
     e.preventDefault();
-
     try{
-      
-        const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
-          method: "POST",
-          headers: {
-            'Content-Type': 'application/json',
-            
-          },
-          body: JSON.stringify(formData),
-          credentials: 'include',
+      const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify(formData),
+        credentials: 'include',
 
     });
+    console.log(formData.worktime)
+    
     if (!response.ok) {
       console.error("❌ Server responded with an error:", response.status, response.statusText);
       const errorText = await response.text();
       console.error("❌ Error details:", errorText);
-  } else {
+    } else {
       const result = await response.json();
       console.log("🎉 Success! Response from backend:", result);
-  } 
+    } 
       const result = await response.json();
       alert("Form submitted successfully");
     }catch(error){

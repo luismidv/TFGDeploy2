@@ -8,22 +8,22 @@
     position: relative;
     top:650px;
     border-radius: 30px;
-    width: 1800px;
+    width: 1600px;
     height: 1300px;
     left:-670px;
     justify-content: space-around;
     padding-bottom: 50px;
     
 }
+
 .room-label{
     font-family: 'Roboto', sans-serif;
     position: relative;
     left: 300px;
     background-color: #f1f1f7;
-    width: 800px;
-    height:500px;
+    width: 500px;
+    height:400px;
     border-radius: 30px;
-
 }
 
 .room-banner-img{
@@ -78,8 +78,8 @@
 }
 
 .description-p{
-    position: absolute;
-    top: 350px;
+    position: relative;
+    top:-480px;
     left: 40px;
     font-size: 18px;
     color:black;

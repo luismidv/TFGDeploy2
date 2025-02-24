@@ -16,7 +16,7 @@ import profilepic from "./static/media/profilepic.jpg"
 
 export function RoomBannerCall() {
     return(
-        <section id = "room-container" className="grid lg:grid-cols-2 gap-4 md:grid-cols-1 md: py-50 ">
+        <section id = "room-container" className="relative top-80 -left-45 grid lg:grid-cols-2 gap-4 md:grid-cols-1 md: py-40 ">
         
 
           <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
