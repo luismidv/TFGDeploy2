@@ -3,6 +3,7 @@ import "./static/css/login.css"
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
 
     const validateEmail = (email) => {
         var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -17,6 +18,7 @@ const RegisterPage = () => {
     const validateForm = () => {
         let emailBool = validateEmail(email);
         let passwordBool = validatePassword(password);
+        
 
         if (email === "") {
             alert("Email must be filled out");
@@ -39,7 +41,7 @@ const RegisterPage = () => {
         }
         console.log("Hola validate")
 
-        sendBackendData(email, password);
+        sendBackendData(email, password,username);
     };
 
     const getCookie = (name) => {
@@ -63,11 +65,11 @@ const RegisterPage = () => {
         }
     };
 
-    const sendBackendData = async (email, password) => {
+    const sendBackendData = async (email, password, username) => {
         
         console.log("Email: ", email)
         console.log("Password:", password)
-        const data = { email, password };
+        const data = { email, password, username };
         const csrfToken = getCookie('csrfToken');
         console.log("csrfToken",csrfToken)
         try {
@@ -110,6 +112,21 @@ const RegisterPage = () => {
             <h2 className="mb-6 text-center text-2xl font-semibold text-gray-700">Register</h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="username-input" className="block text-sm font-medium text-gray-600">
+                  Username
+                </label>
+                <input
+                  type="username"
+                  id="username-input"
+                  name="username"
+                  className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Your username"
+                  required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
               <div>
                 <label htmlFor="email-input" className="block text-sm font-medium text-gray-600">
                   Email
