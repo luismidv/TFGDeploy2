@@ -46,7 +46,9 @@ export function AppExpo(){
 export function App() {
   return (
     
+    
     <Routes>
+      
       <Route path ="/"  element = {<Intro />} />
       <Route path ="/home"  element = {<HomePage />} />
       <Route path="/rooms" element={<Template />} />

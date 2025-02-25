@@ -16,6 +16,8 @@ import "./static/css/roomStyle.css";
 import { RoomBannerCall } from './Room';
 import { Footeras } from './App';
 import { Headers } from './App';
+import { LogProvider } from './LogContext';
+
 
     
 function Home(){
@@ -25,7 +27,11 @@ function Home(){
 export function Template() {
     return (
     <div>
-      <Headers></Headers>
+      <UserProvider>
+          <Headers>
+
+          </Headers>
+        </UserProvider>
 
       {/* Contenedor de habitaciones */}
       <div id="room-container1">

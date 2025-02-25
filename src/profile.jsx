@@ -22,6 +22,8 @@ import roombanner4 from "./static/media/roombanner4.jpg";
 import roombanner5 from "./static/media/roombanner5.jpg";
 import { Footeras } from "./App";
 import { Headers } from "./App";
+import { LogProvider } from './LogContext';
+
 
 
 function Home(){
@@ -98,7 +100,11 @@ const handleSubmit = async(e) => {
   };
   return (
     <div>
-        <Headers></Headers>
+        <LogProvider>
+          <Headers>
+
+          </Headers>
+        </LogProvider>
 
       <section className="profile-section">
         <form className="form-class" method="post" action="/" onSubmit={handleSubmit}>

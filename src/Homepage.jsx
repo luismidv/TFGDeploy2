@@ -12,6 +12,8 @@ import { AppExpo } from './App';
 import { useNavigate } from 'react-router-dom';
 import { Headers } from './App';
 import { Footeras } from './App';
+import { LogProvider } from './LogContext';
+
 
 function Home(){
     const navigate = useNavigate();
@@ -22,7 +24,11 @@ function Home(){
 const HomePage = () => {
     return (
       <div>
-        <Headers></Headers>
+        <LogProvider>
+          <Headers>
+
+          </Headers>
+        </LogProvider>
   
         <div id="image-expo" className="image-expositor">
           <AppExpo />

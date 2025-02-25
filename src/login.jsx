@@ -7,9 +7,12 @@ import { useNavigate } from 'react-router-dom';
 function Home(){
     const navigate = useNavigate();
 }
+
+
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   
   const validateEmail = (email) => {
@@ -79,8 +82,8 @@ const handleSuccesfullConnection = (connection_bool) => {
 
 const sendBackendData = async (email, password, username) => {
         
-  console.log("Email: ", email)
-  console.log("Password:", password)
+  setLoading(true); // Start loading
+  setError(null); // Clear previous errors
   const type = "Login";
   const data = { email, password, username, type };
   const csrfToken = getCookie('csrfToken');
@@ -115,7 +118,9 @@ const sendBackendData = async (email, password, username) => {
   }catch (error) {
     console.error("⚠️ Fetch error (caught in catch block):", error);
     alert("Network error occurred! Check the console for details.");
-};
+  } finally {
+    setLoading(false); // Stop loading
+  }
 };
 
 const handleSubmit = (event) => {

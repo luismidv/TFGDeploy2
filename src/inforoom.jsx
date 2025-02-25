@@ -20,13 +20,17 @@ import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { Headers } from "./App";
 import { Footeras } from "./App";
+import { LogProvider } from './LogContext';
 
 
 const RoomInfo = () => {
   return (
     <div>
-      <Headers></Headers>
-      
+        <LogProvider>
+          <Headers>
+
+          </Headers>
+        </LogProvider>      
     <div className = "root-room">   
         <RoomBanner label = "Room at the center of Valencia" img = {roombanner3}
             rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
