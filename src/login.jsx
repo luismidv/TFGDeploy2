@@ -48,13 +48,16 @@ const validateForm = () => {
     sendBackendData(email, password);
 };
 
-
-
+const handleSuccesfullConnection = (connection_bool) => {
+  console.log("Moving to home page")
+  navigate("/home", {replace: true});
+}
 
 
 const sendBackendData = async (email, password) => {
+    const type = "Register";
+    const data = { email, password, type };
     
-    const data = { email, password };
     try {
         console.log("Prepare to fech")
         const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
@@ -76,6 +79,10 @@ const sendBackendData = async (email, password) => {
       } else {
           const result = await response.json();
           console.log("🎉 Success! Response from backend:", result);
+          if (result.connection_bool !== null){
+            console.log("Login successfull")
+            handleSuccesfullConnection(result.connection_bool);
+          }
       }
   } catch (error) {
       console.error("⚠️ Fetch error (caught in catch block):", error);
@@ -87,6 +94,7 @@ const handleSubmit = (event) => {
     event.preventDefault();
     validateForm();
 };
+
 
 return (
   <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">

@@ -65,6 +65,11 @@ const RegisterPage = () => {
         }
     };
 
+    const handleSuccesfullConnection = (connection_bool) => {
+      console.log("Moving to home page")
+      navigate("/home", {replace: true});
+    }
+
     const sendBackendData = async (email, password, username) => {
         
         console.log("Email: ", email)
@@ -95,8 +100,12 @@ const RegisterPage = () => {
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result);
+              if (result.connection_bool !== null){
+                console.log("Login successfull")
+                handleSuccesfullConnection(result.connection_bool);
           }
-      } catch (error) {
+          }
+        }catch (error) {
           console.error("⚠️ Fetch error (caught in catch block):", error);
           alert("Network error occurred! Check the console for details.");
       };
