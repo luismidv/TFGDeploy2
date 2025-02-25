@@ -54,40 +54,45 @@ const handleSuccesfullConnection = (connection_bool) => {
 }
 
 
-const sendBackendData = async (email, password) => {
-    const type = "Register";
-    const data = { email, password, type };
-    
-    try {
-        console.log("Prepare to fech")
-        const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                
-            },
-            body: JSON.stringify(data),
-            credentials: 'include'
-            
-        });
-        console.log("Fetch finished", response.status)
+const sendBackendData = async (email, password, username) => {
         
-        if (!response.ok) {
-          console.error("❌ Server responded with an error:", response.status, response.statusText);
-          const errorText = await response.text();
-          console.error("❌ Error details:", errorText);
-      } else {
-          const result = await response.json();
-          console.log("🎉 Success! Response from backend:", result);
-          if (result.connection_bool !== null){
-            console.log("Login successfull")
-            handleSuccesfullConnection(result.connection_bool);
-          }
-      }
-  } catch (error) {
-      console.error("⚠️ Fetch error (caught in catch block):", error);
-      alert("Network error occurred! Check the console for details.");
-  };
+  console.log("Email: ", email)
+  console.log("Password:", password)
+  const type = "Login";
+  const data = { email, password, username, type };
+  const csrfToken = getCookie('csrfToken');
+  console.log("csrfToken",csrfToken)
+  try {
+      checkCookies(csrfToken);
+      console.log("Prepare to fech")
+      const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': csrfToken,
+          },
+          body: JSON.stringify(data),
+          credentials: 'include'
+          
+      });
+      console.log("Fetch finished", response.status)
+      
+      if (!response.ok) {
+        console.error("❌ Server responded with an error:", response.status, response.statusText);
+        const errorText = await response.text();
+        console.error("❌ Error details:", errorText);
+    } else {
+        const result = await response.json();
+        console.log("🎉 Success! Response from backend:", result);
+        if (result.connection_bool !== null){
+          console.log("Login successfull")
+          handleSuccesfullConnection(result.connection_bool);
+    }
+    }
+  }catch (error) {
+    console.error("⚠️ Fetch error (caught in catch block):", error);
+    alert("Network error occurred! Check the console for details.");
+};
 };
 
 const handleSubmit = (event) => {
