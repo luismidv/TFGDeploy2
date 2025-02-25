@@ -54,6 +54,21 @@ const validateForm = () => {
     sendBackendData(email, password);
 };
 
+const checkCookies = (csrf) => {
+  const cookies = document.cookie;
+  if (cookies) {
+      console.log("Cookies are present:", cookies);
+  } else {
+      console.log("No cookies found.");
+  }
+
+  if (csrf) {
+      console.log("CSRF token is present:", csrf);
+  } else {
+      console.log("No CSRF token found.");
+  }
+};
+
 const handleSuccesfullConnection = (connection_bool) => {
   console.log("Moving to home page")
   navigate("/home", {replace: true});
