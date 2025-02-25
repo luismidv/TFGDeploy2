@@ -20,6 +20,12 @@ const validatePassword = (password) => {
     return re.test(password);
 };
 
+const getCookie = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+};
+
 const validateForm = () => {
     let emailBool = validateEmail(email);
     let passwordBool = validatePassword(password);
