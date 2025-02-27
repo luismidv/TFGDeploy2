@@ -27,11 +27,11 @@ function Home(){
 export function Template() {
     return (
     <div>
-      <UserProvider>
+      <LogProvider>
           <Headers>
 
           </Headers>
-        </UserProvider>
+        </LogProvider>
 
       {/* Contenedor de habitaciones */}
       <div id="room-container1">

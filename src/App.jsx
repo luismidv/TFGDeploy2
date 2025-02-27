@@ -27,6 +27,8 @@ import contactImage from './static/media/agenda-phone-number-svgrepo-com.svg';
 import searchImage from './static/media/search-svgrepo-com.svg';
 import Started from './started';
 import {useState, useEffect } from "react";
+import { useLog } from './LogContext'; // Import the useUser hook
+
 
 
 
@@ -65,8 +67,15 @@ export function App() {
 }
 export default App;
 
+const Header = () => {
+  const { user, logout } = useUser();
+}
+
 export function Headers(){
+  const {user, login, logout} = useLog();
   return (
+    
+      
         <div>
           <div className="top-container p-6 rounded-lg shadow-lg">
             <img className="mainlogo" src={companyImage} alt="Company Logo" />
@@ -91,12 +100,20 @@ export function Headers(){
                   </Link>
               </div>
     
-              
+            {user ? (
+              <Link className="log-in-button" to="/login">
+                <p className="link-text text-center">LogOut</p>
+              </Link>
+
+            ) : (
               <Link className="log-in-button" to="/login">
                   <p className="link-text text-center">Access</p>
               </Link>
+
+            )}
               
           </div>
+          
     
           <section className="recomendations md:text-left">
             <p className="text-descriptive">Need a room?</p>
@@ -109,6 +126,7 @@ export function Headers(){
         
     
         </div>
+    
       );
   };
 
@@ -152,18 +170,18 @@ export function Footeras(){
 export function Intro() {
   return (
     <div className="relative h-screen w-screen flex items-center justify-center">
-      {/* Background Image */}
+      
       <div
         className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
         style={{ backgroundImage: `url(${background1})` }}
       ></div>
 
-      {/* Content Container */}
+      
       <div className="relative flex flex-col items-center text-center text-white px-6">
         <img className="w-64 md:w-96 lg:w-[500px] h-auto mb-4" src={companyImage} alt="Company Logo" />
         <p className="mt-4 text-lg md:text-2xl font-bold">Improving your house sharing experience</p>
 
-        {/* Buttons */}
+        
         <div className="mb-4 flex flex-col md:flex-row gap-2">
           <Link 
             className="w-full md:w-60 h-14 bg-white text-black text-lg font-semibold flex items-center justify-center rounded-lg shadow-lg"
