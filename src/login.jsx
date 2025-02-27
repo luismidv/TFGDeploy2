@@ -82,8 +82,6 @@ const handleSuccesfullConnection = (connection_bool) => {
 
 const sendBackendData = async (email, password, username) => {
         
-  setLoading(true); // Start loading
-  setError(null); // Clear previous errors
   const type = "Login";
   const data = { email, password, username, type };
   const csrfToken = getCookie('csrfToken');
