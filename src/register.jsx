@@ -81,7 +81,7 @@ const RegisterPage = () => {
         try {
             checkCookies(csrfToken);
             console.log("Prepare to fech")
-            const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
+            const response = await fetch('https://tfgserver.onrender.com/api/user/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
