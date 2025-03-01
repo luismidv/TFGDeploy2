@@ -118,6 +118,32 @@ const sendBackendData = async (email, password, username) => {
   }
 };
 
+const fetchUserData = async (jwtToken) => {
+  try {
+      console.log("Fetching user data...");
+      
+      const response = await fetch('https://tfgserver.onrender.com/api/user/', {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${jwtToken}`,
+              'Content-Type': 'application/json',
+          },
+      });
+
+      if (!response.ok) {
+          console.error("❌ Error fetching user data:", response.status);
+          return;
+      }
+
+      const userData = await response.json();
+      console.log("👤 User info:", userData);
+      
+  } catch (error) {
+      console.error("⚠️ Fetch error while retrieving user data:", error);
+  }
+};
+
+
 const handleSubmit = (event) => {
     event.preventDefault();
     validateForm();
