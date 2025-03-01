@@ -81,43 +81,40 @@ const handleSuccesfullConnection = (connection_bool) => {
 
 
 const sendBackendData = async (email, password, username) => {
-        
-  const type = "Login";
-  const data = { email, password, username, type };
-  const csrfToken = getCookie('csrfToken');
-  console.log("csrfToken",csrfToken)
+  const data = { email, password, username };
+  
   try {
-      checkCookies(csrfToken);
-      console.log("Prepare to fech")
+      console.log("Preparing to fetch token...");
+      
       const response = await fetch('https://tfgserver.onrender.com/api/token/', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
-              
           },
           body: JSON.stringify(data),
-          credentials: 'include'
-          
       });
-      console.log("Fetch finished", response.status)
-      
+
+      console.log("Fetch finished, status:", response.status);
+
       if (!response.ok) {
-        console.error("❌ Server responded with an error:", response.status, response.statusText);
-        const errorText = await response.text();
-        console.error("❌ Error details:", errorText);
-    } else {
-        const result = await response.json();
-        console.log("🎉 Success! Response from backend:", result);
-        if (result.connection_bool !== null){
-          console.log("Login successfull")
-          handleSuccesfullConnection(result.connection_bool);
-    }
-    }
-  }catch (error) {
-    console.error("⚠️ Fetch error (caught in catch block):", error);
-    alert("Network error occurred! Check the console for details.");
-  } finally {
-    setLoading(false); // Stop loading
+          const errorText = await response.text();
+          console.error("❌ Server error:", response.status, response.statusText, errorText);
+          return;
+      }
+
+      const result = await response.json();
+      console.log("🎉 Success! Token received:", result);
+
+      if (result.access) {
+          console.log("🔑 Storing token...");
+          localStorage.setItem('token', result.access); // Save JWT token
+
+          // Now fetch user details using the token
+          fetchUserData(result.access);
+      }
+  } catch (error) {
+      console.error("⚠️ Fetch error:", error);
+      alert("Network error occurred! Check the console for details.");
   }
 };
 
