@@ -80,21 +80,19 @@ const handleSuccesfullConnection = (connection_bool) => {
 }
 
 
-const sendBackendData = async (email, password, username) => {
-  const data = { email, password, username };
-  
+const sendBackendData = async (username, password) => {
   try {
-      console.log("Preparing to fetch token...");
-      
+      console.log("🔄 Sending login request...");
+
       const response = await fetch('https://tfgserver.onrender.com/api/token/', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ username, password }),
       });
 
-      console.log("Fetch finished, status:", response.status);
+      console.log("✅ Fetch finished, status:", response.status);
 
       if (!response.ok) {
           const errorText = await response.text();
@@ -109,7 +107,7 @@ const sendBackendData = async (email, password, username) => {
           console.log("🔑 Storing token...");
           localStorage.setItem('token', result.access); // Save JWT token
 
-          // Now fetch user details using the token
+          // Fetch user details using the token
           fetchUserData(result.access);
       }
   } catch (error) {
