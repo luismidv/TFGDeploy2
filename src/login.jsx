@@ -32,13 +32,13 @@ const getCookie = (name) => {
 };
 
 const validateForm = () => {
-    
+    let emailBool = validateEmail(email);
     let passwordBool = validatePassword(password);
 
     if (email === "") {
         alert("Email must be filled out");
         return;
-    
+    } 
 
     if (password === "") {
         alert("Password must be filled out");
@@ -201,7 +201,4 @@ return (
   </div>
 );
 };
-
-
-
 export default LoginPage;
