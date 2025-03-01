@@ -32,7 +32,7 @@ const getCookie = (name) => {
 };
 
 const validateForm = () => {
-    let emailBool = validateEmail(email);
+    
     let passwordBool = validatePassword(password);
 
     if (email === "") {
