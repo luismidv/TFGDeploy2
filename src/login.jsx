@@ -156,14 +156,14 @@ return (
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="email-input" className="block text-sm font-medium text-gray-600">
-            Email
+            Username
           </label>
           <input
-            type="email"
+            type="username"
             id="email-input"
             name="email"
             className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
-            placeholder="Your email"
+            placeholder="Your username"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
