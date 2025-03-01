@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import "./static/css/login.css"
+import { useNavigate } from 'react-router-dom';
+
+function Home(){
+  const navigate = useNavigate();
+}
+
 const RegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
