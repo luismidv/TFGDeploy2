@@ -38,10 +38,7 @@ const validateForm = () => {
     if (email === "") {
         alert("Email must be filled out");
         return;
-    } else if (!emailBool) {
-        alert("Email format is incorrect");
-        return;
-    }
+    
 
     if (password === "") {
         alert("Password must be filled out");
