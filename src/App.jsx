@@ -75,11 +75,6 @@ const Navbar = ({user, setUser}) => {
   const navigate = useNavigate();
 }
 
-const [user, setUser] = useState(() => {
-  const token = localStorage.getItem('token');
-  return token ? { loggedIn: true } : null;
-});
-
 const handleLogout = () => {
   //Function used to handle logout in the page
   console.log("🚪 Logging out...");
@@ -90,6 +85,11 @@ const handleLogout = () => {
 };
 
 export function Headers(){
+
+  const [setUser] = useState(() => {
+    const token = localStorage.getItem('token');
+    return token ? { loggedIn: true } : null;
+  });
   const {user, login, logout} = useLog();
   return (
     
