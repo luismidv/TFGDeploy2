@@ -71,6 +71,18 @@ const Header = () => {
   const { user, logout } = useUser();
 }
 
+const Navbar = ({user, setUser}) => {
+  const navigate = useNavigate();
+}
+
+const handleLogout = () => {
+  //Function used to handle logout in the page
+  console.log("🚪 Logging out...");
+  localStorage.removeItem('token'); // Remove Json Web Token for the user
+  setUser(null); 
+  navigate('/login');
+};
+
 export function Headers(){
   const {user, login, logout} = useLog();
   return (
@@ -100,8 +112,8 @@ export function Headers(){
                   </Link>
               </div>
     
-            {user ? (
-              <button className="log-in-button" to="/login">
+              {user ? (
+              <button className="log-in-button" to="/login" onClick= {handleLogout}>
                 <p className="link-text text-center">LogOut</p>
               </button>
 
