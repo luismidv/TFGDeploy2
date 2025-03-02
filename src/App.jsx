@@ -75,16 +75,17 @@ const Navbar = ({user, setUser}) => {
   const navigate = useNavigate();
 }
 
-const handleLogout = () => {
-  //Function used to handle logout in the page
-  console.log("🚪 Logging out...");
-  localStorage.removeItem('token'); // Remove Json Web Token for the user
-  setUser(null); 
-  navigate('/home');
-  
-};
+
 
 export function Headers(){
+
+  const handleLogout = () => {
+    //Function used to handle logout in the page
+    console.log("🚪 Logging out...");
+    logout();
+    navigate('/home');
+    
+  };
 
   const [setUser] = useState(() => {
     const token = localStorage.getItem('token');
