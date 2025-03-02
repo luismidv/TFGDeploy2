@@ -109,6 +109,7 @@ const RegisterPage = () => {
               if (result.connection_bool !== null){
                 console.log("Login successfull")
                 handleSuccesfullConnection(result.connection_bool);
+                
           }
           }
         }catch (error) {

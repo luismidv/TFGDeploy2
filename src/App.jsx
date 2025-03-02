@@ -101,9 +101,9 @@ export function Headers(){
               </div>
     
             {user ? (
-              <Link className="log-in-button" to="/login">
+              <button className="log-in-button" to="/login">
                 <p className="link-text text-center">LogOut</p>
-              </Link>
+              </button>
 
             ) : (
               <Link className="log-in-button" to="/login">
