@@ -80,7 +80,7 @@ const handleLogout = () => {
   console.log("🚪 Logging out...");
   localStorage.removeItem('token'); // Remove Json Web Token for the user
   setUser(null); 
-  navigate('/login');
+  navigate('/home');
 };
 
 export function Headers(){
