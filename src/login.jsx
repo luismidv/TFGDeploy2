@@ -106,6 +106,7 @@ const sendBackendData = async (username, password) => {
 
           // Fetch user details using the token
           fetchUserData(result.access);
+          handleSuccesfullConnection(true);
       }
   } catch (error) {
       console.error("⚠️ Fetch error:", error);
