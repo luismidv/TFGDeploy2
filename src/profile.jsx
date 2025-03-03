@@ -32,6 +32,7 @@ function Home(){
 }
 
 export function ProfileForm(){
+  const navigate = useNavigate();
   const token = localStorage.getItem('token');
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
