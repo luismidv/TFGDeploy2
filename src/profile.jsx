@@ -39,7 +39,7 @@ export function ProfileForm(){
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-  
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     try{
@@ -62,7 +62,6 @@ export function ProfileForm(){
       const result = await response.json();
       console.log("🎉 Success! Response from backend:", result);
     } 
-      const result = await response.json();
       alert("Form submitted successfully");
     }catch(error){
       console.error("Error submitting form: ", error);
