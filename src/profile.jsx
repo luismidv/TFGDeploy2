@@ -31,10 +31,6 @@ function Home(){
     const navigate = useNavigate();
 }
 
-
-
-
-
 export function ProfileForm(){
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -93,6 +89,7 @@ export function ProfileForm(){
     navigate('/home'); // Redirect to the home page
 };
 
+if (token){
   return (
     <div>
         <LogProvider>
@@ -200,6 +197,20 @@ export function ProfileForm(){
 
       <Footeras></Footeras>
     </div>
-  );
-}
+    )
+  };
+    return (
+      <div className="text-center p-5">
+        <h2 className="text-red-500 text-xl font-bold"> Log in first please</h2>
+        <p className="text-gray-700">You first need to log in to access the profile section.</p>
+        <button 
+          className="bg-blue-500 text-white px-4 py-2 rounded mt-3"
+          onClick={() => navigate('/login')}
+        >
+          Go to Login
+        </button>
+      </div>
+      )
+  }
+
 export default ProfileForm;
