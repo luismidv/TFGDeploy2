@@ -35,37 +35,38 @@ const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 }
 
-const handleSubmit = async(e) => {
-  e.preventDefault();
-  try{
-    const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
-    method: "POST",
-    headers: {
-      'Content-Type': 'application/json',
-    },
-      body: JSON.stringify(formData),
-      credentials: 'include',
 
-  });
-  console.log(formData.worktime)
-  
-  if (!response.ok) {
-    console.error("❌ Server responded with an error:", response.status, response.statusText);
-    const errorText = await response.text();
-    console.error("❌ Error details:", errorText);
-  } else {
-    const result = await response.json();
-    console.log("🎉 Success! Response from backend:", result);
-  } 
-    const result = await response.json();
-    alert("Form submitted successfully");
-  }catch(error){
-    console.error("Error submitting form: ", error);
-    alert("Failed to submit the form");
-  }
-};
 
 export function ProfileForm(){
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    try{
+      const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+        body: JSON.stringify(formData),
+        credentials: 'include',
+  
+    });
+    console.log(formData.worktime)
+    
+    if (!response.ok) {
+      console.error("❌ Server responded with an error:", response.status, response.statusText);
+      const errorText = await response.text();
+      console.error("❌ Error details:", errorText);
+    } else {
+      const result = await response.json();
+      console.log("🎉 Success! Response from backend:", result);
+    } 
+      const result = await response.json();
+      alert("Form submitted successfully");
+    }catch(error){
+      console.error("Error submitting form: ", error);
+      alert("Failed to submit the form");
+    }
+  };
 
   const [formData, setFormData] = useState({
     name : "",
@@ -99,7 +100,7 @@ export function ProfileForm(){
           </Headers>
         </LogProvider>
       <section className="profile-section">
-        <form className="form-class" method="post">
+        <form className="form-class" method="post" onSubmit={handleSubmit}>
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
             <label className="label-info" htmlFor="name">Name:</label>
