@@ -99,7 +99,7 @@ export function ProfileForm(){
           </Headers>
         </LogProvider>
       <section className="profile-section">
-        <form className="form-class" method="post" action="/">
+        <form className="form-class" method="post">
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
             <label className="label-info" htmlFor="name">Name:</label>
