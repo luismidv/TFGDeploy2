@@ -23,6 +23,7 @@ import roombanner5 from "./static/media/roombanner5.jpg";
 import { Footeras } from "./App";
 import { Headers } from "./App";
 import { LogProvider } from './LogContext';
+import { useLog } from './LogContext'; // Import the context hook
 
 
 
@@ -30,74 +31,66 @@ function Home(){
     const navigate = useNavigate();
 }
 
-
-export function ProfileForm(){
-
-    const [formData, setFormData] = useState({
-        name : "",
-        surnames:"",
-        age:"",
-        email:"",
-        worktime:"",
-        biorythm:"",
-        studies:"",
-        read:"",
-        pets:"",
-        cook:"",
-        sport:"",
-        smoke:"",
-        organized:"",
-    });
-
-const fetchCSRFToken = async() => {
-  try{
-    const response = await fetch("https://tfgserver.onrender.com/csrf/", {
-      credentials : 'include',
-    });
-  
-
-    const data = await response.json();
-    console.log("Fetched CSRF Token: ", data.csrfToken)
-    return data.csrfToken;
-  }catch(error) {
-    console.error("Failed to fetch Token: ", error);
-    return null;
-  }
-}
-
 const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  setFormData({ ...formData, [e.target.name]: e.target.value });
 }
 
 const handleSubmit = async(e) => {
-    e.preventDefault();
-    try{
-      const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-      },
-        body: JSON.stringify(formData),
-        credentials: 'include',
+  e.preventDefault();
+  try{
+    const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
+    method: "POST",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+      body: JSON.stringify(formData),
+      credentials: 'include',
 
-    });
-    console.log(formData.worktime)
-    
-    if (!response.ok) {
-      console.error("❌ Server responded with an error:", response.status, response.statusText);
-      const errorText = await response.text();
-      console.error("❌ Error details:", errorText);
-    } else {
-      const result = await response.json();
-      console.log("🎉 Success! Response from backend:", result);
-    } 
-      const result = await response.json();
-      alert("Form submitted successfully");
-    }catch(error){
-      console.error("Error submitting form: ", error);
-      alert("Failed to submit the form");
-    }
-  };
+  });
+  console.log(formData.worktime)
+  
+  if (!response.ok) {
+    console.error("❌ Server responded with an error:", response.status, response.statusText);
+    const errorText = await response.text();
+    console.error("❌ Error details:", errorText);
+  } else {
+    const result = await response.json();
+    console.log("🎉 Success! Response from backend:", result);
+  } 
+    const result = await response.json();
+    alert("Form submitted successfully");
+  }catch(error){
+    console.error("Error submitting form: ", error);
+    alert("Failed to submit the form");
+  }
+};
+
+export function ProfileForm(){
+
+  const [formData, setFormData] = useState({
+    name : "",
+    surnames:"",
+    age:"",
+    email:"",
+    worktime:"",
+    biorythm:"",
+    studies:"",
+    read:"",
+    pets:"",
+    cook:"",
+    sport:"",
+    smoke:"",
+    organized:"",
+});
+  
+
+  const handleLogout = () => {
+    console.log("🚪 Logging out...");
+    localStorage.removeItem('token'); // Remove the JWT token
+    logout(); // Call the logout function from context
+    navigate('/home'); // Redirect to the home page
+};
+
   return (
     <div>
         <LogProvider>
@@ -105,9 +98,8 @@ const handleSubmit = async(e) => {
 
           </Headers>
         </LogProvider>
-
       <section className="profile-section">
-        <form className="form-class" method="post" action="/" onSubmit={handleSubmit}>
+        <form className="form-class" method="post" action="/">
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
             <label className="label-info" htmlFor="name">Name:</label>
