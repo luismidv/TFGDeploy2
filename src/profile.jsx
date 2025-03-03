@@ -32,6 +32,7 @@ function Home(){
 }
 
 export function ProfileForm(){
+  const token = localStorage.getItem('token');
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -200,11 +201,11 @@ if (token){
     )
   };
     return (
-      <div className="text-center p-5">
-        <h2 className="text-red-500 text-xl font-bold"> Log in first please</h2>
+      <div className="text-center align-center p-5">
+        <h2 className="text-[#303ab2] text-xl font-bold " > Log in first please</h2>
         <p className="text-gray-700">You first need to log in to access the profile section.</p>
         <button 
-          className="bg-blue-500 text-white px-4 py-2 rounded mt-3"
+          className="bg-[#303ab2] text-white px-4 py-2 rounded mt-3"
           onClick={() => navigate('/login')}
         >
           Go to Login
