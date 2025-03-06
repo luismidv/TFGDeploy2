@@ -121,7 +121,7 @@ export function Headers(){
     
               {user ? (
               <button className="log-in-button" to="/login" onClick= {handleLogout}>
-                <p className="link-text text-center">LogOut</p>
+                <p className="link-text text-center">Logout</p>
               </button>
 
             ) : (
