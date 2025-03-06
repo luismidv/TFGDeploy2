@@ -134,12 +134,13 @@ export function Headers(){
           </div>
           
     
-          <section className="recomendations md:text-left">
+          <section className="recomendations max-w-[700px] w-full mx-auto p-4 md:text-left">
             <p className="text-descriptive">Need a room?</p>
-            <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers </p>
-            <p className="text-descriptive-2 hidden sm:block">Discover our crazy offers & Share with your dream partners </p>
-
-            <div className = "text-div"></div>
+            <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>
+            <p className="text-descriptive-2 hidden sm:block">
+            Discover our crazy offers & Share with your dream partners
+            </p>
+            <div className="text-div"></div>
           </section>
     
         
