@@ -74,6 +74,7 @@ const checkCookies = (csrf) => {
 const handleSuccesfullConnection = (connection_bool) => {
   console.log("Moving to home page")
   navigate("/home", {replace: true});
+  startAlgorithm()
 }
 
 
@@ -107,6 +108,7 @@ const sendBackendData = async (username, password) => {
           // Fetch user details using the token
           fetchUserData(result.access);
           handleSuccesfullConnection(true);
+          
       }
   } catch (error) {
       console.error("⚠️ Fetch error:", error);
@@ -144,6 +146,23 @@ const handleSubmit = (event) => {
     event.preventDefault();
     validateForm();
 };
+
+const startAlgorithm =() => {
+    const token = localStorage.getItem('token');
+    try{
+      console.log("Starting algorithm")
+      fetch('https://tfgserver.onrender.com/api/algo_view/', {
+        method: 'GET',
+        headers: {
+          'Authorization' : `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        }});
+    
+    }catch(error){
+        console.log("Error:", error);
+    }
+  }
+
 
 
 return (
