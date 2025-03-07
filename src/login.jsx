@@ -147,16 +147,17 @@ const handleSubmit = (event) => {
     validateForm();
 };
 
-const startAlgorithm =() => {
+const startAlgorithm =async () => {
     const token = localStorage.getItem('token');
     try{
       console.log("Starting algorithm")
-      fetch('https://tfgserver.onrender.com/api/algo_view/', {
+      const response = await fetch('https://tfgserver.onrender.com/api/algo_view/', {
         method: 'GET',
         headers: {
           'Authorization' : `Bearer ${token}`,
           'Content-Type': 'application/json',
         }});
+      console.log(response)
     
     }catch(error){
         console.log("Error:", error);
