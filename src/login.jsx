@@ -157,7 +157,7 @@ const startAlgorithm =async () => {
           'Authorization' : `Bearer ${token}`,
           'Content-Type': 'application/json',
         }});
-      console.log(response)
+      console.log("Algorithm response ", response)
     
     }catch(error){
         console.log("Error:", error);
