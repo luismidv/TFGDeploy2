@@ -152,7 +152,7 @@ const startAlgorithm =async () => {
     try{
       console.log("Starting algorithm")
       const response = await fetch('https://tfgserver.onrender.com/api/algo_view/', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Authorization' : `Bearer ${token}`,
           'Content-Type': 'application/json',
