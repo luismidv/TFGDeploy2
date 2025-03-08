@@ -149,7 +149,7 @@ const handleSubmit = (event) => {
 };
 
 const startAlgorithm =async (setTenantData) => {
-    const { setTenantData } = useTenant(); 
+    
     const token = localStorage.getItem('token');
     try{
       console.log("Starting algorithm")
