@@ -3,12 +3,12 @@ import "./static/css/login.css"
 import { Link } from 'react-router-dom';
 import { AppExpo } from './App';
 import { useNavigate } from 'react-router-dom';
+import { createContext, useContext } from 'react';
+import { useTenant } from "./TenantContext"
 
 function Home(){
     const navigate = useNavigate();
 }
-
-
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -159,8 +159,9 @@ const startAlgorithm =async () => {
         }});
       const data = await response.json();
       console.log("Algorithm response ", data)
+      setTenantData(data);
     
-    }catch(error){
+    }catch(error){  
         console.log("Error:", error);
     }
   }

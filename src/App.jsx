@@ -28,7 +28,7 @@ import searchImage from './static/media/search-svgrepo-com.svg';
 import Started from './started';
 import {useState, useEffect } from "react";
 import { useLog } from './LogContext'; // Import the useUser hook
-
+import { TenantProvider } from './TenantContext';
 
 
 
@@ -48,20 +48,19 @@ export function AppExpo(){
 export function App() {
   return (
     
-    
-    <Routes>
-      
-      <Route path ="/"  element = {<Intro />} />
-      <Route path ="/home"  element = {<HomePage />} />
-      <Route path="/rooms" element={<Template />} />
-      <Route path ="/profile"  element = {<ProfileComponent />} />
-      <Route path="/contact" element={<Template />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/inforoom" element={<RoomInfo />} />
-      <Route path="/started" element={<Started />} />
-      
-    </Routes>
+    <TenantProvider>
+      <Routes>
+        <Route path ="/"  element = {<Intro />} />
+        <Route path ="/home"  element = {<HomePage />} />
+        <Route path="/rooms" element={<Template />} />
+        <Route path ="/profile"  element = {<ProfileComponent />} />
+        <Route path="/contact" element={<Template />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/inforoom" element={<RoomInfo />} />
+        <Route path="/started" element={<Started />} />
+      </Routes>
+    </TenantProvider>
     
   );
 }
