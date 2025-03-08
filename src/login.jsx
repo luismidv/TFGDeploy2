@@ -10,6 +10,7 @@ function Home(){
     const navigate = useNavigate();
 }
 const LoginPage = () => {
+  const { setTenantData } = useTenant()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -72,10 +73,10 @@ const checkCookies = (csrf) => {
 };
 
 const handleSuccesfullConnection = (connection_bool) => {
-  const { setTenantData } = useTenant()
+ 
   console.log("Moving to home page")
   navigate("/home", {replace: true});
-  startAlgorithm(setTenantData)
+  startAlgorithm()
 }
 
 
@@ -148,7 +149,7 @@ const handleSubmit = (event) => {
     validateForm();
 };
 
-const startAlgorithm =async (setTenantData) => {
+const startAlgorithm =async () => {
     
     const token = localStorage.getItem('token');
     try{
