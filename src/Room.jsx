@@ -130,6 +130,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     }
 
 export function RecomInfo() {
+    //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
     return (
         <div>
             

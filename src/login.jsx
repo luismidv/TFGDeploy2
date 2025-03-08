@@ -79,7 +79,7 @@ const handleSuccesfullConnection = (connection_bool) => {
 
 
 const sendBackendData = async (username, password) => {
-  try {
+  try {-
       console.log("🔄 Sending login request...");
 
       const response = await fetch('https://tfgserver.onrender.com/api/token/', {
@@ -158,7 +158,7 @@ const startAlgorithm =async () => {
           'Content-Type': 'application/json',
         }});
       const data = await response.json();
-      console.log("Algorithm response ", data.user)
+      console.log("Algorithm response ", data)
     
     }catch(error){
         console.log("Error:", error);
