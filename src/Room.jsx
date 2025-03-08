@@ -12,6 +12,7 @@ import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { Link } from 'react-router-dom';
 import profilepic from "./static/media/profilepic.jpg"
+import {  useTenant  } from "./TenantContext";
 
 
 export function RoomBannerCall() {
@@ -130,6 +131,9 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     }
 
 export function RecomInfo() {
+    const { tenantData } = useTenant();
+    console.log(tenantData)
+
     //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
     return (
         <div>
