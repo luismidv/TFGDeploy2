@@ -72,9 +72,10 @@ const checkCookies = (csrf) => {
 };
 
 const handleSuccesfullConnection = (connection_bool) => {
+  const setTenantData = useTenant()
   console.log("Moving to home page")
   navigate("/home", {replace: true});
-  startAlgorithm()
+  startAlgorithm(setTenantData)
 }
 
 
@@ -147,7 +148,7 @@ const handleSubmit = (event) => {
     validateForm();
 };
 
-const startAlgorithm =async () => {
+const startAlgorithm =async (setTenantData) => {
     const { setTenantData } = useTenant(); 
     const token = localStorage.getItem('token');
     try{
