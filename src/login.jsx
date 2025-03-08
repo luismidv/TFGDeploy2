@@ -72,7 +72,7 @@ const checkCookies = (csrf) => {
 };
 
 const handleSuccesfullConnection = (connection_bool) => {
-  const setTenantData = useTenant()
+  const { setTenantData } = useTenant()
   console.log("Moving to home page")
   navigate("/home", {replace: true});
   startAlgorithm(setTenantData)
