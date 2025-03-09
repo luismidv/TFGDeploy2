@@ -132,7 +132,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
 
 export function RecomInfo() {
     const { tenantData } = useTenant();
-    const tenants = tenantData.Names?.map((_, index) => ({
+    const tenants = tenantData?.Names?.map((_, index) => ({
         Names : tenantData.Names[index] || "Unknown",
         Age: tenantData.Age[index] || "Age not specified",
         Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
