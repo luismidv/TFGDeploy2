@@ -140,11 +140,10 @@ export function RecomInfo() {
         Compatibility: tenantData.Similarity[index] || "0.0"
 
     })) ||[];
-    console.log(tenants)
     //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
      return (
          <div>
-             {tenantData.map((tenant, index) => (
+             {tenants.map((tenant, index) => (
                      <div key = {index}>
                          <RecomLines tenant = {tenant} /> <br/><br/>
                      </div>
