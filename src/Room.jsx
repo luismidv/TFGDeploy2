@@ -138,10 +138,10 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     
         useEffect(() => {
             if (tenantData) {
-                // Parse tenantData if it's in string format
+                
                 try {
                     
-                    const formattedTenants = parsedData ? Object.keys(tenantData.Names).map((key, index) => ({
+                    const formattedTenants = tenantData ? Object.keys(tenantData.Names).map((key, index) => ({
                         Names: tenantData.Names[index],
                         Age: tenantData.Age[index],
                         Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
@@ -154,12 +154,12 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
                     console.error("Error parsing tenantData:", error);
                 }
             }
-        }, [tenantData]);  // Run when tenantData is updated
+        }, [tenantData]); 
     
         return (
             <div>
                 {tenants.length === 0 ? (
-                    <p>Loading tenants...</p>  // Show a loading message if tenants are empty
+                    <p>Loading tenants...</p>  
                 ) : (
                     tenants.map((tenant, index) => (
                         <div key={index}>
