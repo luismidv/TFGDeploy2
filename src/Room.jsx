@@ -132,23 +132,26 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
 
 export function RecomInfo() {
     const { tenantData } = useTenant();
-    console.log(tenantData)
+    
 
     //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
     return (
         <div>
-            
-            <RecomLines></RecomLines> <br/><br/>
-            <RecomLines></RecomLines> <br/><br/>
-            <RecomLines></RecomLines> <br/><br/>
-            <RecomLines></RecomLines> <br/><br/>
-            
+            {tenantData.map((tenant,index) => (
+                    <div key = {index}>
+                        <RecomLines tenant = {tenant} /> <br/><br/>
+                    </div>
+                ))}
         </div>
     )   
 }
 
-export function RecomLines(){
-    const features = ["Luis","20 y/o","No smoking", "70% compatibility", "someone@example.com"]
+export function RecomLines({ tenant }){
+    const features = [tenant.name || "Unknown", `${tenant.age} y/o` || "Age not specified", 
+                      tenant.smoking ? "Smokes" : "No smoking",
+                      `${tenant.compatibility}% compatibility`,
+                      tenant.email || "No email provided"
+    ]
     return(
         <section>
             <img className = "profilepic" src = {profilepic}></img>
