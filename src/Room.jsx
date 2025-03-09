@@ -132,18 +132,25 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
 
 export function RecomInfo() {
     const { tenantData } = useTenant();
-    
+    const tenants = tenantData.Names?.map((_, index) => ({
+        Names : tenantData.Names[index] || "Unknown",
+        Age: tenantData.Age[index] || "Age not specified",
+        Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
+        Email: tenantData.Email[index] || "No email provided",
+        Compatibility: tenantData.Similarity[index] || "0.0"
 
+    })) ||[];
+    console.log(tenants)
     //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
-    return (
-        <div>
-            {tenantData.map((tenant,index) => (
-                    <div key = {index}>
-                        <RecomLines tenant = {tenant} /> <br/><br/>
-                    </div>
-                ))}
-        </div>
-    )   
+     return (
+         <div>
+             {tenantData.map((tenant, index) => (
+                     <div key = {index}>
+                         <RecomLines tenant = {tenant} /> <br/><br/>
+                     </div>
+                 ))}
+         </div>
+    ) 
 }
 
 export function RecomLines({ tenant }){
