@@ -136,7 +136,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const { tenantData } = useTenant();
         const [tenants, setTenants] = useState([]);
         console.log(tenantData.Names, tenantData.Age)
-    
+        
         useEffect(() => {
             if (tenantData && tenantData.Names && tenantData.Age && tenantData.Smoking && tenantData.Email && tenantData.Similarity) {
                 try {
@@ -173,12 +173,15 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     }
     
     export function RecomLines({ tenant }) {
+        const changeEmail = (email, maximumLength = 20)=>
+            email.length > maximumLength ? email.slice(0, maximumLength) + "...": email;
+    
         const features = [
             tenant.Names,
             `${tenant.Age} y/o`,
             tenant.Smoking,
             `${tenant.Similarity}% Similarity`,
-            tenant.Email
+            changeEmail(tenant.Email)
         ];
     
         return (
