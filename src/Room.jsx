@@ -135,6 +135,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     export function RecomInfo() {
         const { tenantData } = useTenant();
         const [tenants, setTenants] = useState([]);
+        console.log(tenantData.Names, tenantData.Age)
     
         useEffect(() => {
             if (tenantData && tenantData.Names && tenantData.Age && tenantData.Smoking && tenantData.Email && tenantData.Similarity) {
