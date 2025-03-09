@@ -13,7 +13,7 @@ import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { Link } from 'react-router-dom';
 import profilepic from "./static/media/profilepic.jpg"
 import {  useTenant  } from "./TenantContext";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 
 
