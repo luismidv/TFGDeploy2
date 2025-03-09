@@ -13,7 +13,7 @@ import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { Link } from 'react-router-dom';
 import profilepic from "./static/media/profilepic.jpg"
 import {  useTenant  } from "./TenantContext";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -134,6 +134,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
 
     export function RecomInfo() {
         const { tenantData } = useTenant();
+        const [tenants, setTenants] = useState([]);
     
         useEffect(() => {
             if (tenantData) {
