@@ -178,15 +178,15 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         );
     }
 
-export function RecomLines({ tenant }){
-    console.log("RecomLines")
-    const features = [tenant.Names,`${tenant.Age} y/o`,tenant.Smoking,`${tenant.Compatibility}% compatibility`,tenant.Email];
-    return(
-        <section>
-            <img className = "profilepic" src = {profilepic}></img>
-            <p style={{ whiteSpace: "pre-wrap", position:"relative", left: "65px", fontWeight: "bold"}}>
-                {features.join("\t\t\t")}
-            </p>
-        </section>
-    )
-}
+// export function RecomLines({ tenant }){
+//     console.log("RecomLines")
+//     const features = [tenant.Names,`${tenant.Age} y/o`,tenant.Smoking,`${tenant.Compatibility}% compatibility`,tenant.Email];
+//     return(
+//         <section>
+//             <img className = "profilepic" src = {profilepic}></img>
+//             <p style={{ whiteSpace: "pre-wrap", position:"relative", left: "65px", fontWeight: "bold"}}>
+//                 {features.join("\t\t\t")}
+//             </p>
+//         </section>
+//     )
+// }
