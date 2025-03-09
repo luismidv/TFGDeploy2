@@ -139,7 +139,6 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     
         useEffect(() => {
             if (tenantData && tenantData.Names && tenantData.Age && tenantData.Smoking && tenantData.Email && tenantData.Similarity) {
-                
                 try {
                     const formattedTenants = Object.keys(tenantData.Names).map((key, index) => ({
                         Names: tenantData.Names[index],
@@ -148,7 +147,6 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
                         Email: tenantData.Email[index],
                         Similarity: tenantData.Similarity[index]
                     }));
-    
                     setTenants(formattedTenants);
                 } catch (error) {
                     console.error("Error processing tenantData:", error);
@@ -179,7 +177,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
             tenant.Names,
             `${tenant.Age} y/o`,
             tenant.Smoking,
-            `${tenant.Compatibility}% compatibility`,
+            `${tenant.Similarity}% Similarity`,
             tenant.Email
         ];
     
