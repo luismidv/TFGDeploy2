@@ -130,30 +130,53 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     )
     }
 
-export function RecomInfo() {
-    const { tenantData } = useTenant();
-    console.log("Current tenant data", tenantData)
-
-    const tenants = tenantData.Names.map((name, index) => ({
-        Names : tenantData.Names[index] || "Unknown",
-        Age: tenantData.Age[index] || "Age not specified",
-        Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
-        Email: tenantData.Email[index] || "No email provided",
-        Compatibility: tenantData.Similarity[index] || "0.0"
-
-    })) || [];
-    console.log(tenants)
-    //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
-     return (
-         <div>
-            {tenants.map((tenant, index) => (
-                <div key = {index}>
-                    <RecomLines tenant = {tenant} /> <br/><br/>
-                </div>
-            ))}
-         </div>
-    ) 
-}
+    export function RecomInfo() {
+        const { tenantData } = useTenant();
+    
+        // Ensure tenantData exists and has the right structure
+        if (!tenantData || !tenantData.Names || !Array.isArray(tenantData.Names)) {
+            return <p>Loading tenants...</p>; // Handle missing or malformed data
+        }
+    
+        // Transform tenantData into an array of tenant objects
+        const tenants = tenantData.Names.map((name, index) => ({
+            Names: tenantData.Names[index],
+            Age: tenantData.Age[index],
+            Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
+            Email: tenantData.Email[index],
+            Compatibility: tenantData.Similarity[index]
+        }));
+    
+        return (
+            <div>
+                {tenants.map((tenant, index) => (
+                    <div key={index}>
+                        <RecomLines tenant={tenant} />
+                        <br /><br />
+                    </div>
+                ))}
+            </div>
+        );
+    }
+    
+    export function RecomLines({ tenant }) {
+        const features = [
+            tenant.Names,
+            `${tenant.Age} y/o`,
+            tenant.Smoking,
+            `${tenant.Compatibility}% compatibility`,
+            tenant.Email
+        ];
+    
+        return (
+            <section>
+                <img className="profilepic" src="default-pic.jpg" alt="Profile" />
+                <p style={{ whiteSpace: "pre-wrap", position: "relative", left: "65px", fontWeight: "bold" }}>
+                    {features.join("\t\t\t")}
+                </p>
+            </section>
+        );
+    }
 
 export function RecomLines({ tenant }){
     console.log("RecomLines")
