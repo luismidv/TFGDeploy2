@@ -42,33 +42,6 @@ const RoomInfo = () => {
         <section className ="sec-recomend">
           <RecomInfo></RecomInfo>
         </section>
-      
-      <div className="slideshow-container">
-        <div className="mySlides fade">
-          <div className="numbertext">1 / 3</div>
-          <img className="slide-img" src={roombanner3} alt="Room 1" />
-          <div className="text">Caption Text</div>
-        </div>
-        <div className="mySlides fade">
-          <div className="numbertext">2 / 3</div>
-          <img className="slide-img" src={roombanner4} alt="Room 2" />
-          <div className="text">Caption Two</div>
-
-        </div>
-        <div className="mySlides fade">
-          <div className="numbertext">3 / 3</div>
-          <img className="slide-img" src={roombanner5} alt="Room 3" />
-          <div className="text">Caption Three</div>
-        </div>
-        <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
-        <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
-      </div>
-      
-      <div style={{ textAlign: "center" }}>
-        <span className="dot" onClick={() => currentSlide(1)}></span>
-        <span className="dot" onClick={() => currentSlide(2)}></span>
-        <span className="dot" onClick={() => currentSlide(3)}></span>
-      </div>
     </div> 
       
       <Footeras></Footeras>
