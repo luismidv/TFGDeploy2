@@ -143,16 +143,17 @@ export function RecomInfo() {
     //DEFINE THE 4 MOST COMPATIBLE TENANTS, PASS EACH ONE TO THE RECOMLINES TO PRINT ATTRIBUTES
      return (
          <div>
-             {tenants.map((tenant, index) => (
-                     <div key = {index}>
-                         <RecomLines tenant = {tenant} /> <br/><br/>
-                     </div>
-                 ))}
+            {tenants.map((tenant, index) => (
+                <div key = {index}>
+                    <RecomLines tenant = {tenant} /> <br/><br/>
+                </div>
+            ))}
          </div>
     ) 
 }
 
 export function RecomLines({ tenant }){
+    console.log("RecomLines")
     const features = [tenant.Names,`${tenant.Age} y/o`,tenant.Smoking,`${tenant.Compatibility}% compatibility`,tenant.Email];
     return(
         <section>
