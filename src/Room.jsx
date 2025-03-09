@@ -140,7 +140,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
             if (tenantData) {
                 // Parse tenantData if it's in string format
                 try {
-                    const parsedData = JSON.parse(tenantData);
+                    
                     const formattedTenants = parsedData ? Object.keys(parsedData.Names).map((key, index) => ({
                         Names: parsedData.Names[index],
                         Age: parsedData.Age[index],
