@@ -119,12 +119,12 @@ export function Headers(){
               </div>
     
               {user ? (
-              <button className="log-in-button" to="/login" onClick= {handleLogout}>
+              <Link className="log-in-button" to="/home" onClick= {handleLogout}>
                 <p className="link-text text-center">Logout</p>
-              </button>
+              </Link>
 
             ) : (
-              <Link className="log-in-button" to="/login">
+              <Link className="log-in-button" to="/profile">
                   <p className="link-text text-center">Access</p>
               </Link>
 
