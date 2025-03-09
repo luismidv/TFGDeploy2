@@ -141,12 +141,12 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
                 // Parse tenantData if it's in string format
                 try {
                     
-                    const formattedTenants = parsedData ? Object.keys(parsedData.Names).map((key, index) => ({
-                        Names: parsedData.Names[index],
-                        Age: parsedData.Age[index],
-                        Smoking: parsedData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
-                        Email: parsedData.Email[index],
-                        Similarity: parsedData.Similarity[index]
+                    const formattedTenants = parsedData ? Object.keys(tenantData.Names).map((key, index) => ({
+                        Names: tenantData.Names[index],
+                        Age: tenantData.Age[index],
+                        Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
+                        Email: tenantData.Email[index],
+                        Similarity: tenantData.Similarity[index]
                     })) : [];
     
                     setTenants(formattedTenants);
