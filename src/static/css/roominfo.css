@@ -249,7 +249,7 @@
 .root-room {
     position: absolute;
     top: 600px;
-    left: -110px;
+    left: -190px;
 }
 
 .profilepic{
@@ -264,4 +264,12 @@
     top: -40px;
     left: 65px;
     
+}
+
+.sec-recomend{
+    position: relative;
+    top: -400px;
+    left: 1120px;
+    width: 850px;
+    height: 500px;
 }
