@@ -154,11 +154,7 @@ export function RecomInfo() {
 }
 
 export function RecomLines({ tenant }){
-    const features = [tenant.name || "Unknown", `${tenant.age} y/o` || "Age not specified", 
-                      tenant.smoking ? "Smokes" : "No smoking",
-                      `${tenant.compatibility}% compatibility`,
-                      tenant.email || "No email provided"
-    ]
+    const features = [tenant.Names,`${tenant.Age} y/o`,tenant.Smoking,`${tenant.Compatibility}% compatibility`,tenant.Email];
     return(
         <section>
             <img className = "profilepic" src = {profilepic}></img>
