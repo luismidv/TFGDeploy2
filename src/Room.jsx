@@ -137,24 +137,25 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const [tenants, setTenants] = useState([]);
     
         useEffect(() => {
-            if (tenantData) {
+            if (tenantData && tenantData.Names && tenantData.Age && tenantData.Smoking && tenantData.Email && tenantData.Similarity) {
                 
                 try {
-                    
-                    const formattedTenants = tenantData ? Object.keys(tenantData.Names).map((key, index) => ({
+                    const formattedTenants = Object.keys(tenantData.Names).map((key, index) => ({
                         Names: tenantData.Names[index],
                         Age: tenantData.Age[index],
                         Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
                         Email: tenantData.Email[index],
                         Similarity: tenantData.Similarity[index]
-                    })) : [];
+                    }));
     
                     setTenants(formattedTenants);
                 } catch (error) {
-                    console.error("Error parsing tenantData:", error);
+                    console.error("Error processing tenantData:", error);
                 }
+            } else {
+                console.error("tenantData is missing or not properly structured");
             }
-        }, [tenantData]); 
+        }, [tenantData]);   
     
         return (
             <div>
