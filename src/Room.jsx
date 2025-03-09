@@ -133,28 +133,38 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     export function RecomInfo() {
         const { tenantData } = useTenant();
     
-        // Ensure tenantData exists and has the right structure
-        if (!tenantData || !tenantData.Names || !Array.isArray(tenantData.Names)) {
-            return <p>Loading tenants...</p>; // Handle missing or malformed data
-        }
+        useEffect(() => {
+            if (tenantData) {
+                // Parse tenantData if it's in string format
+                try {
+                    const parsedData = JSON.parse(tenantData);
+                    const formattedTenants = parsedData ? Object.keys(parsedData.Names).map((key, index) => ({
+                        Names: parsedData.Names[index],
+                        Age: parsedData.Age[index],
+                        Smoking: parsedData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
+                        Email: parsedData.Email[index],
+                        Similarity: parsedData.Similarity[index]
+                    })) : [];
     
-        // Transform tenantData into an array of tenant objects
-        const tenants = tenantData.Names.map((name, index) => ({
-            Names: tenantData.Names[index],
-            Age: tenantData.Age[index],
-            Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
-            Email: tenantData.Email[index],
-            Compatibility: tenantData.Similarity[index]
-        }));
+                    setTenants(formattedTenants);
+                } catch (error) {
+                    console.error("Error parsing tenantData:", error);
+                }
+            }
+        }, [tenantData]);  // Run when tenantData is updated
     
         return (
             <div>
-                {tenants.map((tenant, index) => (
-                    <div key={index}>
-                        <RecomLines tenant={tenant} />
-                        <br /><br />
-                    </div>
-                ))}
+                {tenants.length === 0 ? (
+                    <p>Loading tenants...</p>  // Show a loading message if tenants are empty
+                ) : (
+                    tenants.map((tenant, index) => (
+                        <div key={index}>
+                            <RecomLines tenant={tenant} />
+                            <br /><br />
+                        </div>
+                    ))
+                )}
             </div>
         );
     }
