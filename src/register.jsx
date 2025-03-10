@@ -92,7 +92,7 @@ const RegisterPage = () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRFToken': csrfToken,
+                    
                 },
                 body: JSON.stringify(data),
                 credentials: 'include'
@@ -107,9 +107,10 @@ const RegisterPage = () => {
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result);
-              if (result.tokens){
+              if (result.access){
                 console.log("Token received, storing...")
                 localStorage.setItem('token', result.tokens); // Save JWT token
+                console.log("Inside register.jsx", result.tokens)
                 handleSuccesfullConnection();
                 
           }
