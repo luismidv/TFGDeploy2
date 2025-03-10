@@ -124,15 +124,13 @@ export function Headers(){
               </Link>
 
             ) : (
-              <Link className="log-in-button" to="/profile">
+              <Link className="log-in-button" to="/login">
                   <p className="link-text text-center">Access</p>
               </Link>
 
             )}
               
           </div>
-          
-    
           <section className="recomendations max-w-[700px] w-full md:text-left">
             <p className="text-descriptive">Need a room?</p>
             <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>

@@ -74,7 +74,7 @@ const RegisterPage = () => {
 
     const handleSuccesfullConnection = (connection_bool) => {
       console.log("Moving to home page")
-      navigate("/home", {replace: true});
+      navigate("/profile", {replace: true});
     }
 
     const sendBackendData = async (email, password, username) => {
