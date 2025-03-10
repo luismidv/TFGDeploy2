@@ -194,7 +194,7 @@ if (token){
       <br /><br />
 
       <button className="profile-button" type="submit">  Save </button> 
-        <button className="profile-button" type=""> Cancel </button>
+        <button className="profile-button" type="submit"> Cancel </button>
           </fieldset>
         </form>
       </section>
