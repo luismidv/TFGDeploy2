@@ -64,7 +64,7 @@ export function ProfileForm(){
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
      // Prevent default form submission behavior
-
+     alert("Primer check")
      e.prevendDefault();
      try {
       console.log("Sending backend")
@@ -78,14 +78,16 @@ export function ProfileForm(){
             body: JSON.stringify(data),
         });
 
-        alert("Mandando formulario al backend")
+        alert("Segundo check")
         if (!response.ok) {
           console.error("❌ Server responded with an error:", response.status, response.statusText);
           const errorText = await response.text();
           console.error("❌ Error details:", errorText);
+          alert("Tercer check")
       } else {
           const result = await response.json();
           console.log("🎉 Success! Response from backend:", result);
+          alert("Cuarto check")
           
       }
     }catch (error) {
