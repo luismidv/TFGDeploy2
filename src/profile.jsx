@@ -69,7 +69,7 @@ export function ProfileForm(){
                 'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify(data),
-            credentials: 'include'
+            
             
         });
 
