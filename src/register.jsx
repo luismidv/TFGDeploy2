@@ -123,6 +123,7 @@ const RegisterPage = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         validateForm();
+        
     };
 
     return (
