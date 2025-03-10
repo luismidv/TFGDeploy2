@@ -32,8 +32,10 @@ function Home(){
 }
 
 export function ProfileForm(){
+  
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
+  console.log(token)
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
@@ -60,6 +62,7 @@ export function ProfileForm(){
     //PIPELINE FOR THIS FUNCTION:
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
+    e.preventDefault(); // Prevent default form submission behavior
     try {
         const data = {...formData};
         const response = await fetch('https://tfgserver.onrender.com/api/tenants_features/', {
@@ -99,6 +102,7 @@ if (token){
         </LogProvider>
       <section className="profile-section">
         <form className="form-class" method="post" onSubmit={sendBackendData}>
+          
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
             <label className="label-info" htmlFor="name">Name:</label>

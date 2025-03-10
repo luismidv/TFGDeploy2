@@ -72,7 +72,7 @@ const RegisterPage = () => {
         }
     };
 
-    const handleSuccesfullConnection = (connection_bool) => {
+    const handleSuccesfullConnection = () => {
       console.log("Moving to home page")
       navigate("/profile", {replace: true});
     }
@@ -110,7 +110,7 @@ const RegisterPage = () => {
               if (result.tokens){
                 console.log("Token received, storing...")
                 localStorage.setItem('token', result.tokens); // Save JWT token
-                handleSuccesfullConnection(result.connection_bool);
+                handleSuccesfullConnection();
                 
           }
           }
