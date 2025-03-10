@@ -59,6 +59,7 @@ export function ProfileForm(){
   });
 
   const sendBackendData = async (e) => {
+    alert("Mandando formulario al backend")
     //PIPELINE FOR THIS FUNCTION:
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
