@@ -63,7 +63,7 @@ export function ProfileForm(){
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
      // Prevent default form submission behavior
-    
+     try {
       console.log("Sending backend")
         const data = {...formData};
         const response = await fetch('https://tfgserver.onrender.com/api/tenants_features/', {
@@ -74,7 +74,7 @@ export function ProfileForm(){
             },
             body: JSON.stringify(data),
         });
-    try {
+    
         if (!response.ok) {
           console.error("❌ Server responded with an error:", response.status, response.statusText);
           const errorText = await response.text();
