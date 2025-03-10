@@ -59,13 +59,13 @@ export function ProfileForm(){
   });
 
   const sendBackendData = async (e) => {
-    
+    e.preventDefault();
     //PIPELINE FOR THIS FUNCTION:
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
      // Prevent default form submission behavior
      alert("Primer check")
-     e.prevendDefault();
+     
      try {
       console.log("Sending backend")
         const data = {...formData};
