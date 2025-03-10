@@ -107,8 +107,9 @@ const RegisterPage = () => {
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result);
-              if (result.connection_bool !== null){
-                console.log("Login successfull")
+              if (result.tokens){
+                console.log("Token received, storing...")
+                localStorage.setItem('token', result.tokens); // Save JWT token
                 handleSuccesfullConnection(result.connection_bool);
                 
           }
