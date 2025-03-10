@@ -38,36 +38,8 @@ export function ProfileForm(){
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  const handleSubmit = async(e) => {
-    e.preventDefault();
-    try{
-      const response = await fetch("https://tfgserver.onrender.com/api/algorithm/", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-      },
-        body: JSON.stringify(formData),
-        credentials: 'include',
-  
-    });
-    console.log(formData.worktime)
-    
-    if (!response.ok) {
-      console.error("❌ Server responded with an error:", response.status, response.statusText);
-      const errorText = await response.text();
-      console.error("❌ Error details:", errorText);
-    } else {
-      const result = await response.json();
-      console.log("🎉 Success! Response from backend:", result);
-    } 
-      alert("Form submitted successfully");
-    }catch(error){
-      console.error("Error submitting form: ", error);
-      alert("Failed to submit the form");
-    }
-  };
-
   const [formData, setFormData] = useState({
+
     name : "",
     surnames:"",
     age:"",
@@ -81,15 +53,40 @@ export function ProfileForm(){
     sport:"",
     smoke:"",
     organized:"",
-});
-  
 
-  const handleLogout = () => {
-    console.log("🚪 Logging out...");
-    localStorage.removeItem('token'); // Remove the JWT token
-    logout(); // Call the logout function from context
-    navigate('/home'); // Redirect to the home page
+  });
+
+  const sendBackendData = async () => {
+    //PIPELINE FOR THIS FUNCTION:
+      //  -SEND INFO OF THE RECENTLY LOGGED USER
+      //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
+    try {
+        const response = await fetch('https://tfgserver.onrender.com/api/tenant_features/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
+            },
+            body: JSON.stringify(...formData, token),
+            credentials: 'include'
+            
+        });
+
+        if (!response.ok) {
+          console.error("❌ Server responded with an error:", response.status, response.statusText);
+          const errorText = await response.text();
+          console.error("❌ Error details:", errorText);
+      } else {
+          const result = await response.json();
+          console.log("🎉 Success! Response from backend:", result);
+          
+      }
+    }catch (error) {
+      console.error("⚠️ Fetch error (caught in catch block):", error);
+      alert("Network error occurred! Check the console for details.");
+  };
 };
+
 
 if (token){
   return (
@@ -100,7 +97,7 @@ if (token){
           </Headers>
         </LogProvider>
       <section className="profile-section">
-        <form className="form-class" method="post" onSubmit={handleSubmit}>
+        <form className="form-class" method="post" onSubmit={sendBackendData}>
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
             <label className="label-info" htmlFor="name">Name:</label>
@@ -213,6 +210,6 @@ if (token){
         </button>
       </div>
       )
-  }
+}
 
 export default ProfileForm;
