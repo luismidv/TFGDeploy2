@@ -59,7 +59,7 @@ export function ProfileForm(){
   });
 
   const sendBackendData = async (e) => {
-    alert("Mandando formulario al backend")
+    
     //PIPELINE FOR THIS FUNCTION:
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
@@ -77,7 +77,8 @@ export function ProfileForm(){
             },
             body: JSON.stringify(data),
         });
-    
+
+        alert("Mandando formulario al backend")
         if (!response.ok) {
           console.error("❌ Server responded with an error:", response.status, response.statusText);
           const errorText = await response.text();
