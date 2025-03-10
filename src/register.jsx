@@ -108,9 +108,8 @@ const RegisterPage = () => {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result);
               if (result.tokens){
-                console.log("Token received, storing...")
-                localStorage.setItem('token', result.tokens); // Save JWT token
-                console.log("Inside register.jsx", result.tokens)
+                localStorage.setItem('token', result.tokens.access); // Save JWT token
+                console.log("Inside register.jsx", result.tokens.access)
                 handleSuccesfullConnection();
                 
           }
