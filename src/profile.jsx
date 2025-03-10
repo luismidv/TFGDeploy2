@@ -61,13 +61,14 @@ export function ProfileForm(){
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
     try {
+        const data = {...formData, token: token, };
         const response = await fetch('https://tfgserver.onrender.com/api/tenants_features/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
             },
-            body: JSON.stringify(...formData, token),
+            body: JSON.stringify(data),
             credentials: 'include'
             
         });
