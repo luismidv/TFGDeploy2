@@ -62,8 +62,9 @@ export function ProfileForm(){
     //PIPELINE FOR THIS FUNCTION:
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
-    e.preventDefault(); // Prevent default form submission behavior
+     // Prevent default form submission behavior
     try {
+      console.log("Sending backend")
         const data = {...formData};
         const response = await fetch('https://tfgserver.onrender.com/api/tenants_features/', {
             method: 'POST',
