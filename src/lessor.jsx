@@ -227,7 +227,7 @@ export function Lessor(){
                                 placeholder="Lessor names"
                                 required
                                 value={names}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => setNames(e.target.value)}
                             />
                             </div>
                             <div>
@@ -247,7 +247,7 @@ export function Lessor(){
                             </div>
                             <div>
                             <label htmlFor="email-input" className="block text-sm font-medium text-gray-600">
-                                Names
+                                Email
                             </label>
                             <input
                                 type="text"
