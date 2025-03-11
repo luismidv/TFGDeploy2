@@ -78,16 +78,17 @@ export function ProfileForm(){
             body: JSON.stringify(data),
         });
 
-        alert("Segundo check")
+        
         if (!response.ok) {
           console.error("❌ Server responded with an error:", response.status, response.statusText);
           const errorText = await response.text();
           console.error("❌ Error details:", errorText);
-          alert("Tercer check")
+          
       } else {
           const result = await response.json();
           console.log("🎉 Success! Response from backend:", result);
-          alert("Cuarto check")
+          navigate("/home", {replace: true});
+         
           
       }
     }catch (error) {
