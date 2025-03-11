@@ -47,7 +47,7 @@ export function AppExpo(){
 
 export function App() {
   return (
-    
+      
     <TenantProvider>
       <Routes>
         <Route path ="/"  element = {<Intro />} />

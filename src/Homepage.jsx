@@ -22,6 +22,8 @@ function Home(){
 
 
 const HomePage = () => {
+  const token = localStorage.getItem('token');
+
     return (
       <div>
         <LogProvider>
@@ -34,10 +36,23 @@ const HomePage = () => {
           <AppExpo />
         </div>
         <div className = "text-section text-center md:text-left relative md:translate-y-0 translate-y-[700px] transition-transform duration-300">
-          
-          <Link  to ="/profile" className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300">
+        
+        
+        {token ? (
+          <Link
+            to="/profile"
+            className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300"
+          >
             Get started
           </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300"
+          >
+            Log-in & Get Started
+          </Link>
+        )}
         </div>
   
         <section className="why-us lg:translate-y-0 sm: translate-y-[800px] md:translate-y-[200px] transition transform duration-300">
