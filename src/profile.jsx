@@ -42,7 +42,7 @@ export function ProfileForm(){
 
   const [formData, setFormData] = useState({
 
-    name : "",
+    names : "",
     surnames:"",
     age:"",
     email:"",
