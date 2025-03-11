@@ -50,7 +50,7 @@ const HomePage = () => {
             to="/login"
             className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300"
           >
-            Log-in & Get Started
+            Get Started
           </Link>
         )}
         </div>
