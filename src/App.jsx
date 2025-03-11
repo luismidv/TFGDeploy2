@@ -29,7 +29,7 @@ import Started from './started';
 import {useState, useEffect } from "react";
 import { useLog } from './LogContext'; // Import the useUser hook
 import { TenantProvider } from './TenantContext';
-
+import { Lessor } from "./lessor.jsx"
 
 
 export function AppExpo(){
@@ -59,6 +59,7 @@ export function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/inforoom" element={<RoomInfo />} />
         <Route path="/started" element={<Started />} />
+        <Route path="/lessor" element ={<Lessor />} />
       </Routes>
     </TenantProvider>
     
@@ -147,6 +148,57 @@ export function Headers(){
       );
   };
 
+  export function HeadersRent(){
+
+    const handleLogout = () => {
+      //Function used to handle logout in the page
+      console.log("🚪 Logging out...");
+      logout();
+      navigate('/home');
+      
+    };
+  
+    const [setUser] = useState(() => {
+      const token = localStorage.getItem('token');
+      return token ? { loggedIn: true } : null;
+    });
+    const {user, login, logout} = useLog();
+    return (
+      
+        
+          <div>
+            <div className="top-container p-6 rounded-lg shadow-lg">
+              <img className="mainlogo" src={companyImage} alt="Company Logo" />
+              <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
+      
+                 <div className="menu-div justify-center">
+                    <Link className="rooti-button" to="/home">
+                       <img src={houseImage} alt="Home" />
+                    </Link>
+    
+                    <Link className="rooti-button " to="/rooms">
+                        <img src={bedsImage} alt="Rooms" />
+                    </Link>
+                  </div>
+
+                
+            </div>
+            <section className="recomendations max-w-[700px] w-full md:text-left">
+              <p className="text-descriptive">Need a room?</p>
+              <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>
+              <p className="text-descriptive-2 hidden sm:block">
+              Discover our crazy offers & Share with your dream partners
+              </p>
+              <div className="text-div"></div>
+            </section>
+      
+          
+      
+          </div>
+      
+        );
+    };
+
 export function Footeras(){
   return(
   <section className="about-us lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[700px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
@@ -207,7 +259,7 @@ export function Intro() {
 
           <Link 
             className="w-full md:w-60 h-14 bg-white text-black text-lg font-semibold flex items-center justify-center rounded-lg shadow-lg"
-            to="/home"
+            to="/lessor"
           > I am renting a room </Link>
         </div>
       </div>
