@@ -96,7 +96,8 @@ export function Headers(){
     
       
         <div>
-          <div className="top-container p-6 rounded-lg shadow-lg">
+          <div className="top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between">
+
             <img className="mainlogo" src={companyImage} alt="Company Logo" />
             <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
     
