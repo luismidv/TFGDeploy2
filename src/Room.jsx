@@ -21,7 +21,7 @@ export function RoomBannerCall() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     return(
-        <section id = "room-container" className="relative top-80 -left-65 grid lg:grid-cols-2 gap-60 md:grid-cols-1 md: py-40 ">
+        <section id = "room-container" className="relative top-80 -left-65 grid lg:grid-cols-2 gap-4 mb-60 md:grid-cols-1 md: py-40 ">
         
 
           <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
