@@ -114,7 +114,7 @@
 
 .recomendations{
     position: relative;
-    top: 320px;
+    top:-120px;
     left:425px;
 }
 
@@ -380,9 +380,8 @@ select{
 
 .menu-div{
     display: flex;
-    flex-direction: row;
     position: relative;
-    top: 130px;
+    top: -30px;
     width: 600px;
     left:340px;
 }

@@ -101,7 +101,7 @@ export function Headers(){
             <img className="mainlogo" src={companyImage} alt="Company Logo" />
             <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
     
-               <div className="menu-div justify-center">
+               <div className="menu-div justify-center grid grid-cols-2  md:grid-cols-4">
                   <Link className="rooti-button" to="/home">
                      <img src={houseImage} alt="Home" />
                   </Link>
