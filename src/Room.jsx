@@ -21,7 +21,7 @@ export function RoomBannerCall() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     return(
-        <section id = "room-container" className="relative top-80 -left-65 grid lg:grid-cols-2 gap-4 mb-60 md:grid-cols-1 md: py-40 ">
+        <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid lg:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
           <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
@@ -62,17 +62,17 @@ export function RoomBanner({label, img, rooms, metters, bathrooms,price, bedroom
     bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description}) {
     
     return(
-        <div className = "room-label md:w-[800px] md:h-[500px] w-[200px] h-[100px] left-[-500px] top-[-300px] md:left-[300px]">
-            <img className = "room-banner-img w-[50%] height-[100%]" src = {img}></img>
+        <div className = "room-label md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] md:left-[300px] mb-300 md:mb-0">
+            <img className = "room-banner-img w-[80%] height-[35%] relative top-[550px] left-[0px]" src = {img}></img>
             <p className = "desc-p"> {label}  </p>
-            <div className = "head-info absolute md:left-[120px] md:top-[80px] left-[260px] top-[115px]">
+            <div className = "head-info absolute md:left-[120px] md:top-[80px] left-[265px] top-[115px]">
                 <p className = "metters-p"> {metters} M </p>
             </div>
-            <div className = "head-info1 absolute left-[210px] top-[80px]">
+            <div className = "head-info1 absolute md:left-[210px] md:top-[80px] left-[190px] top-[115px]">
                 <p className = "bathrooms-p"> {bathrooms} </p>
                 <img className= "bathroom-img relative" src = {bathroomsvg} ></img>
             </div>
-            <div className = "head-info2 absolute left-[300px] top-[80px]">
+            <div className = "head-info2 absolute md:left-[300px] md:top-[80px] left-[230px] top-[145px]">
                 <p className = "bedroom-p">{rooms}</p>
                 <img className = "bedroom-img relative top-[-25px]" src = {bedroomsvg} ></img>
             </div>
@@ -88,7 +88,7 @@ export function RoomBanner({label, img, rooms, metters, bathrooms,price, bedroom
                 Visit
             </Link>
             {description.split("\n").map((line,index) => (
-                <p className = "description-p absolute top-[340px]" key={index}>{line}</p>
+                <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
             ))}
         </div>
     )
