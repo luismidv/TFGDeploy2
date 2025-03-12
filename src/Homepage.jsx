@@ -41,21 +41,21 @@ const HomePage = () => {
         {token ? (
           <Link
             to="/profile"
-            className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300"
+            className="form-button block absolute  left-[250px] top-[2300px] md:left-[650px] md:top-[1500px] lg:left-[770px] lg:top-[1150px] md: transition-transform duration-300"
           >
             Get started
           </Link>
         ) : (
           <Link
             to="/login"
-            className="form-button block lg:translate-y-0 lg:translate-x-[-5px] md:translate-y-[220px] md:translate-x-[-5px] translate-y-[100px] translate-x-[-220px]  transition-transform duration-300"
+            className="form-button block absolute left-[100px] top-[1500px] md:left-[650px] md:top-[1500px] lg:left-[770px] lg:top-[1150px] transition-transform duration-300"
           >
             Get Started
           </Link>
         )}
         </div>
   
-        <section className="why-us lg:translate-y-0 sm: translate-y-[800px] md:translate-y-[200px] hidden md:block transition transform duration-300">
+        <section className="why-us lg:translate-y-0 sm: translate-y-[500px] md:translate-y-[200px] hidden md:block transition transform duration-300">
           <h1 className="why-us-h1">Why choosing Roomatch</h1>
           <p className="why-us-p">
             Find your dream room <br /> <br />

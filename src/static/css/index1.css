@@ -426,9 +426,7 @@ select{
 
 .form-button{
     display: inline-flex;
-    position: relative;
     font-family: "Proxima Nova", system-ui, sans-serif;
-    left: 775px;
     top: 1150px;
     width: 316px;
     height: 60px;
