@@ -34,7 +34,7 @@ import { Lessor } from "./lessor.jsx"
 
 export function AppExpo(){
   return (
-    <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute top-[650px] left-[90px] md:left-[280px] ">
+    <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute top-[650px] left-[60px] md:left-[280px] ">
       <Banner image = {roombannerImage1} title = "Room number 1" ></Banner>
       <Banner image = {roombannerImage2} title = "Room number 2"></Banner>
       <Banner image = {roombannerImage3} title = "Room number 3"></Banner> 
@@ -98,7 +98,7 @@ export function Headers(){
         <div>
           <div className="top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between">
 
-            <img className="mainlogo absolute left-[100px] md:left-[330px] top-[-20px]" src={companyImage} alt="Company Logo" />
+            <img className="mainlogo absolute left-[70px] md:left-[330px] top-[-20px]" src={companyImage} alt="Company Logo" />
             <p className="pslogan text-center hidden md:block ">Improving your house sharing experience</p>
     
                <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[0px] md:left-[330px]">
@@ -202,7 +202,7 @@ export function Headers(){
 
 export function Footeras(){
   return(
-  <section className="about-us lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[700px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
+  <section className="about-us lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[300px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
   <h1 className="about-us-h1 mb-6">About us</h1>
     <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
       <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
