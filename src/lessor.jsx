@@ -23,7 +23,7 @@ export function Lessor(){
     const [names, setNames] = useState('');
     const [telephone, setTelephone] = useState('');
     const [email, setEmail] = useState('');
-    const 
+     
 
 
     const sendBackendData = async (e) => {
