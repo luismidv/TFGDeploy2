@@ -9,6 +9,7 @@ import{ useState} from "react";
 
 
 export function Lessor(){
+    const navigate = useNavigate();
     
     const [direction, setDirection] = useState('');
     const [city, setCity] = useState('');
@@ -22,6 +23,7 @@ export function Lessor(){
     const [names, setNames] = useState('');
     const [telephone, setTelephone] = useState('');
     const [email, setEmail] = useState('');
+    const 
 
 
     const sendBackendData = async (e) => {

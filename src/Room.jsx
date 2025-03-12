@@ -18,6 +18,9 @@ import { useEffect, useState } from "react";
 
 
 export function RoomBannerCall() {
+    //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
+    //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
+    //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     return(
         <section id = "room-container" className="relative top-80 -left-45 grid lg:grid-cols-2 gap-4 md:grid-cols-1 md: py-40 ">
         
