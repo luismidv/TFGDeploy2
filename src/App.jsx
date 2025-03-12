@@ -202,9 +202,10 @@ export function Headers(){
 
 export function Footeras(){
   return(
-  <section className="about-us lg:py-20 text-center md:text-left relative md:translate-y-0 translate-y-[300px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
+  <section className="about-us top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between
+   md:translate-y-0 translate-y-[300px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
   <h1 className="about-us-h1 mb-6">About us</h1>
-    <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+    <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4 relative">
       <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
         <strong>Our purpose</strong> <br />
         Mainly our purpose is to help people <br />
