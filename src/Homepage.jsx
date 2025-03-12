@@ -55,7 +55,7 @@ const HomePage = () => {
         )}
         </div>
   
-        <section className="why-us lg:translate-y-0 sm: translate-y-[800px] md:translate-y-[200px] transition transform duration-300">
+        <section className="why-us lg:translate-y-0 sm: translate-y-[800px] md:translate-y-[200px] hidden md:block transition transform duration-300">
           <h1 className="why-us-h1">Why choosing Roomatch</h1>
           <p className="why-us-p">
             Find your dream room <br /> <br />

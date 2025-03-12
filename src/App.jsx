@@ -34,7 +34,7 @@ import { Lessor } from "./lessor.jsx"
 
 export function AppExpo(){
   return (
-    <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute top-[650px] left-[200px] md:left[280px]">
+    <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute top-[650px] left-[200px] md:left[280px] ">
       <Banner image = {roombannerImage1} title = "Room number 1" ></Banner>
       <Banner image = {roombannerImage2} title = "Room number 2"></Banner>
       <Banner image = {roombannerImage3} title = "Room number 3"></Banner> 
@@ -98,10 +98,10 @@ export function Headers(){
         <div>
           <div className="top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between">
 
-            <img className="mainlogo absolute left-[200px] md:left-[330px] top-[-50px]" src={companyImage} alt="Company Logo" />
-            <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
+            <img className="mainlogo absolute left-[130px] md:left-[330px] top-[-50px]" src={companyImage} alt="Company Logo" />
+            <p className="pslogan text-center md:hide ">Improving your house sharing experience</p>
     
-               <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[100px] md:left-[330px]  ">
+               <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[50px] md:left-[330px]">
                   <Link className="rooti-button" to="/home">
                      <img src={houseImage} alt="Home" />
                   </Link>
@@ -133,7 +133,7 @@ export function Headers(){
             )}
               
           </div>
-          <section className="recomendations max-w-[700px] w-full md:text-left absolute left-[200px] top-[330px] md:left-[420px] top-[320px]">
+          <section className="recomendations max-w-[700px] w-full md:text-left absolute left-[150px] top-[330px] md:left-[420px] ">
             <p className="text-descriptive">Need a room?</p>
             <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>
             <p className="text-descriptive-2 hidden sm:block">
