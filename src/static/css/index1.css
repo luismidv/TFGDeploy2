@@ -334,7 +334,6 @@ select{
 .about-us{
     position: relative;
     top: 2900px;
-    width: 1920px;
     height: 600px;
     background-color: #303ab2;
     color: #FFF8DC;
@@ -362,9 +361,7 @@ select{
     
 }
 
-.about-div{
-    position: relative;
-}
+
 
 .div-text-about {
     position: relative;
@@ -431,8 +428,8 @@ select{
     display: inline-flex;
     position: relative;
     font-family: "Proxima Nova", system-ui, sans-serif;
-    left: 750px;
-    top: 1450px;
+    left: 775px;
+    top: 1150px;
     width: 316px;
     height: 60px;
     background-color: #303ab2;

@@ -168,11 +168,12 @@ export function Headers(){
       
         
           <div>
-            <div className="top-container p-6 rounded-lg shadow-lg">
-              <img className="mainlogo" src={companyImage} alt="Company Logo" />
-              <p className="pslogan text-center md:text-left">Improving your house sharing experience</p>
-      
-                 <div className="menu-div justify-center">
+            <div className="top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between">
+
+              <img className="mainlogo absolute left-[70px] md:left-[330px] top-[-20px]" src={companyImage} alt="Company Logo" />
+              <p className="pslogan text-center hidden md:block ">Improving your house sharing experience</p>
+
+              <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[0px] md:left-[330px]">
                     <Link className="rooti-button" to="/home">
                        <img src={houseImage} alt="Home" />
                     </Link>
@@ -184,7 +185,7 @@ export function Headers(){
 
                 
             </div>
-            <section className="recomendations max-w-[700px] w-full md:text-left">
+            <section className="recomendations max-w-[700px] w-full md:text-left absolute left-[90px] top-[330px] md:left-[420px] ">
               <p className="text-descriptive">Need a room?</p>
               <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>
               <p className="text-descriptive-2 hidden sm:block">
@@ -204,27 +205,27 @@ export function Footeras(){
   return(
   <section className="about-us top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between
    md:translate-y-0 translate-y-[300px] lg:h-[600px] md:h-[800px] h-[1200px] transition-transform duration-300">
-  <h1 className="about-us-h1 mb-6">About us</h1>
-    <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4 relative">
-      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+  
+    <div class ="about-div grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4 absolute top-[30px] left-[110px] md:left-[400px]  ">
+      <p className="p-div-section text-xl py-20 relative -translate-x-[19px] ">
         <strong>Our purpose</strong> <br />
         Mainly our purpose is to help people <br />
         have the best experience when <br />sharing a home.
       </p>
 
-      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px]  ">
+      <p className="p-div-section text-xl py-20 relative -translate-x-[19px]  ">
       <strong>Who are we?</strong> <br />
         Company created in 2024 as a final <br /> degree project
         with the idea of <br />improving students' sharing experience.
       </p>
 
-      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+      <p className="p-div-section text-xl py-20 relative -translate-x-[19px] ">
       <strong>Our team</strong> <br />
         Our team is composed of 1 person: <br />a computer science 
         student focused <br />on machine learning.
       </p>
 
-      <p className="p-div-section text-3xl py-20 relative -translate-x-[19px] ">
+      <p className="p-div-section text-xl py-20 relative -translate-x-[19px] ">
       
       <strong>Work with us</strong> <br />
         Feel free to message us via our email or <br />
