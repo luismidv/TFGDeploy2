@@ -36,9 +36,7 @@
 
 }
 .mainlogo{
-    position: absolute;
-    left: 330px;
-    top:-55px;
+    
     width: 300px;
     height: 300px;
 }
@@ -112,11 +110,7 @@
 }
 
 
-.recomendations{
-    position: relative;
-    top:-120px;
-    left:425px;
-}
+
 
 .text-descriptive {
     position:relative;
@@ -379,11 +373,9 @@ select{
 
 
 .menu-div{
-    display: flex;
-    position: relative;
-    top: -30px;
+    
     width: 600px;
-    left:340px;
+    left:40px;
 }
  
 
