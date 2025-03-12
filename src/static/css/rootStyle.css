@@ -6,8 +6,6 @@
     display: flex;
     position: absolute;
     justify-content: space-around;
-    
-    
     width: 1300px;
     height: 800px;
 }
