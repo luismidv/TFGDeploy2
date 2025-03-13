@@ -49,7 +49,7 @@ export function Lessor(){
               
           } else {
               const result = await response.json();
-              console.log("🎉 Success! Response from backend:", result);
+              console.log("🎉 Success! Response from backend:", formData);
               navigate("/home", {replace: true});
              
               
