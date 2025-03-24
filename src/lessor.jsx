@@ -211,7 +211,7 @@ export function Lessor(){
                             className="hidden"
                             accept="image/*"
                             multiple
-                            required
+                            
                             onChange={setImages}
                         />
                             </label>
