@@ -21,7 +21,7 @@ export function RoomBannerCall() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     return(
-        <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid lg:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
+        <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
           <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
@@ -55,7 +55,7 @@ export function RoomBanner({label, img, rooms, metters, bathrooms,price, bedroom
     bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description}) {
     
     return(
-        <div className = "room-label md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] md:left-[300px] mb-300 md:mb-0">
+        <div className = "room-label lg:w-[800px] lg:h-[500px] md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] lg:left-[300px] md:left-[300px] mb-300 md:mb-0">
             <img className = "room-banner-img w-[80%] height-[70%] relative top-[550px] left-[0px] md:top-[0px] md:left-[420px] md:w-[50%] md:h-[100%]" src = {img}></img>
             <p className = "desc-p"> {label}  </p>
             <div className = "head-info absolute md:left-[120px] md:top-[80px] left-[265px] top-[85px]">
