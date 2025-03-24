@@ -111,8 +111,8 @@ if (token){
           
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
-            <label className="label-info" htmlFor="name">Name:</label>
-            <input className="input-info" onChange={handleChange} type="text" id="name" name="name" placeholder="Your name" required />
+            <label className="label-info" htmlFor="names">Name:</label>
+            <input className="input-info" onChange={handleChange} type="text" id="names" name="names" placeholder="Your name" required />
             <label className="label-info" htmlFor="surnames">Surname:</label>
             <input className="input-info-surname" onChange={handleChange} type="text" id="surnames" name="surnames" placeholder="Your surnames" required />
             <label className="label-info" htmlFor="age">Age:</label>
