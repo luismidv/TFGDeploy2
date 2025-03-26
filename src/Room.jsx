@@ -92,7 +92,7 @@ export function RoomBannerTenants({label, img, rooms, metters, bathrooms,price, 
     
     return(
         <div className = "room-label lg:w-[800px] lg:h-[500px] md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[205px] top-[-100px] lg:left-[300px] md:left-[300px] md:top-[100px] mb-300 md:mb-0">
-            <img className = "room-banner-img w-[80%] height-[70%] relative top-[550px] left-[0px] 2xl:top-[0px] 2xl:left-[420px] 2xl:w-[50%] 2xl:h-[100%]" src = {img}></img>
+            <img className = "room-banner-img w-[80%] height-[70%] relative top-[550px] left-[0px] md:top-[0px] md:left-[420px] 2xl:w-[50%] 2xl:h-[100%]" src = {img}></img>
             <p className = "desc-p"> {label}  </p>
             <div className = "head-info absolute 2xl:left-[120px] 2xl:top-[80px] left-[265px] top-[85px]">
                 <p className = "metters-p"> {metters} M </p>
