@@ -217,7 +217,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     
         return (
             <section>
-                <img className="profilepic" src="default-pic.jpg" alt="Profile" />
+                
                 <div className="flex flex-wrap gap-x-4 text-sm sm:text-base md:text-lg">
                 {features.map((feature, index) => (
                     <span key={index} className="whitespace-nowrap">
