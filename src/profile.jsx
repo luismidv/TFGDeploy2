@@ -107,7 +107,7 @@ if (token){
           </Headers>
         </LogProvider>
       <section className="profile-section">
-        <form className="form-class" method="post" onSubmit={sendBackendData}>
+        <form className="form-class absolute top-[300px] left-[60px] md:top-[300px] md:left-[750px] text-[14px] md:text-[20px]" method="post" onSubmit={sendBackendData}>
           
           <fieldset className="form-fieldset">
             <h1 className="profile-title">Your zone</h1>
@@ -121,7 +121,7 @@ if (token){
             <input className="input-info-email" type="email" onChange={handleChange} id="email" name="email" placeholder="Your email" required />
           </fieldset>
           <fieldset className="selectors-fieldset">
-            <label className="profile-label" htmlFor="worktime">Do you work during the morning, the night or both?</label>
+            <label className="profile-label" htmlFor="worktime">Do you work during the morning, the night or both?</label><br />
             <select name = "worktime" value={formData.worktime} className = "relative left-[50px]" onChange={handleChange}  id="worktime">
               <option value="">Both of them</option>
               <option value="morning">Morning</option>

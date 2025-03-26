@@ -12,7 +12,7 @@ import searchImage from './static/media/search-svgrepo-com.svg';
 import roombanner3 from "./static/media/roombanner3.webp";
 import roombanner4 from "./static/media/roombanner4.jpg";
 import roombanner5 from "./static/media/roombanner5.jpg";
-import { RecomInfo, RoomBanner } from "./Room"
+import { RecomInfo, RoomBannerTenants } from "./Room"
 import bedsvg from "./static/media/RoomBanners/bedroom.svg"
 import profsvg from "./static/media/RoomBanners/userprof.svg"
 import directionsvg from "./static/media/RoomBanners/location.svg"
@@ -32,13 +32,13 @@ const RoomInfo = () => {
           </Headers>
         </LogProvider>      
     <div className = "root-room">   
-        <RoomBanner label = "Room at the center of Valencia" img = {roombanner3}
+        <RoomBannerTenants label = "Room at the center of Valencia" img = {roombanner3}
             rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
             bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
             profilesvg= {profsvg} username = "PepitoVendepisos"
             directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
             description = "Beatiful house in the center"> 
-        </RoomBanner>
+        </RoomBannerTenants>
         <section className ="sec-recomend">
           <RecomInfo></RecomInfo>
         </section>

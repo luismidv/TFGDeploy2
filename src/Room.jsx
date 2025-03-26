@@ -87,6 +87,42 @@ export function RoomBanner({label, img, rooms, metters, bathrooms,price, bedroom
     )
 }
 
+export function RoomBannerTenants({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
+    bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description}) {
+    
+    return(
+        <div className = "room-label lg:w-[800px] lg:h-[500px] md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] lg:left-[300px] md:left-[300px] md:top-[300px] mb-300 md:mb-0">
+            <img className = "room-banner-img w-[80%] height-[70%] relative top-[550px] left-[0px] md:top-[0px] md:left-[420px] md:w-[50%] md:h-[100%]" src = {img}></img>
+            <p className = "desc-p"> {label}  </p>
+            <div className = "head-info absolute md:left-[120px] md:top-[80px] left-[265px] top-[85px]">
+                <p className = "metters-p"> {metters} M </p>
+            </div>
+            <div className = "head-info1 absolute md:left-[210px] md:top-[80px] left-[190px] top-[85px]">
+                <p className = "bathrooms-p"> {bathrooms} </p>
+                <img className= "bathroom-img relative" src = {bathroomsvg} ></img>
+            </div>
+            <div className = "head-info2 absolute md:left-[300px] md:top-[80px] left-[230px] top-[115px]">
+                <p className = "bedroom-p">{rooms}</p>
+                <img className = "bedroom-img relative top-[-25px]" src = {bedroomsvg} ></img>
+            </div>
+           <p className = "price-p absolute top-[110px] ">  {price}</p>
+            
+            <img className ="profile-img absolute top-[200px]" src = {profilesvg}></img>
+            <p className = "username-p absolute top-[210px]"> {username}</p>
+            
+            <img className = "direction-img absolute top-[250px]" src = {directionsvg}></img>
+            <p className = "direction-p absolute top-[260px]"> {direction}</p>
+            
+            <Link className="room-info absolute top-[450px]" to ="/inforoom">
+                Visit
+            </Link>
+            {description.split("\n").map((line,index) => (
+                <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
+            ))}
+        </div>
+    )
+}
+
 
 export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
     bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description}) {
