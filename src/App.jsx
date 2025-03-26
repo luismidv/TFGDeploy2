@@ -98,10 +98,10 @@ export function Headers(){
         <div>
           <div className="top-container p-6 rounded-lg shadow-lg flex flex-wrap items-center justify-between">
 
-            <img className="mainlogo absolute left-[70px] md:left-[330px] top-[-20px]" src={companyImage} alt="Company Logo" />
+            <img className="mainlogo absolute left-[70px] md:left-[70px] lg:left-[330px] top-[-20px]" src={companyImage} alt="Company Logo" />
             <p className="pslogan text-center hidden md:block ">Improving your house sharing experience</p>
     
-               <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[0px] md:left-[330px]">
+               <div className="menu-div justify-center grid grid-cols-2 md:grid-cols-4 relative left-[0px] md:left-[70px] lg:left-[330px]">
                   <Link className="rooti-button" to="/home">
                      <img src={houseImage} alt="Home" />
                   </Link>
@@ -133,7 +133,7 @@ export function Headers(){
             )}
               
           </div>
-          <section className="recomendations max-w-[700px] w-full md:text-left absolute left-[90px] top-[330px] md:left-[420px] ">
+          <section className="recomendations max-w-[700px] w-full md:text-left absolute left-[90px] top-[330px] md:left-[170px] lg:left-[420px] ">
             <p className="text-descriptive">Need a room?</p>
             <p className="text-descriptive-2 block sm:hidden">Discover our crazy offers</p>
             <p className="text-descriptive-2 hidden sm:block">
