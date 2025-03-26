@@ -39,7 +39,7 @@ const RoomInfo = () => {
             directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
             description = "Beatiful house in the center"> 
         </RoomBannerTenants>
-        <section className ="sec-recomend absolute lg:top-[100px] lg:left-[1200px] md:left-[250px] md:top-[600px] left-[250px] top-[1050px]">
+        <section className ="sec-recomend absolute 2xl:top-[100px] 2xl:left-[1200px] md:left-[250px] md:top-[600px] left-[250px] top-[1050px]">
           <RecomInfo></RecomInfo>
         </section>
     </div> 
