@@ -17,6 +17,7 @@ const RegisterPage = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [showrePassword, setShowrePassword] = useState(false);
+    const [telephone, setTelephone] = useState(false);
     
     const validateEmail = (email) => {
         var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -93,7 +94,7 @@ const RegisterPage = () => {
         
   
         const type = "Register";
-        const data = { email, password, username, type };
+        const data = { email, password, username, telephone, type };
         const csrfToken = getCookie('csrfToken');
         console.log("csrfToken",csrfToken)
         try {
@@ -175,6 +176,21 @@ const RegisterPage = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div>
+                <label htmlFor="telephone-input" className="block text-sm font-medium text-gray-600">
+                  Email
+                </label>
+                <input
+                  type="telephone"
+                  id="telephone-input"
+                  name="telephone"
+                  className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
+                  placeholder="Your telephone"
+                  required
+                  value={telephone}
+                  onChange={(e) => setTelephone(e.target.value)}
                 />
               </div>
       
