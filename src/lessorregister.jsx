@@ -117,7 +117,7 @@ const LessorRegisterPage = () => {
               handleSuccesfullConnection();
                 
           }
-          }
+          
         }catch (error) {
           console.error("⚠️ Fetch error (caught in catch block):", error);
           alert("Network error occurred! Check the console for details.");
