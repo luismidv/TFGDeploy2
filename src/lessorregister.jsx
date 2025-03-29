@@ -85,8 +85,7 @@ const LessorRegisterPage = () => {
     };
 
     const handleSuccesfullConnection = () => {
-      console.log("Moving to home page")
-      navigate("/profile", {replace: true});
+      navigate("/lessor")
     }
 
     const sendBackendData = async (email, password, username) => {
@@ -94,12 +93,9 @@ const LessorRegisterPage = () => {
   
         const type = "Register";
         const data = { email, password, username, type };
-        const csrfToken = getCookie('csrfToken');
-        console.log("csrfToken",csrfToken)
         try {
-            checkCookies(csrfToken);
             console.log("Prepare to fech")
-            const response = await fetch('https://tfgserver.onrender.com/api/my_endpoint/', {
+            const response = await fetch('https://tfgserver.onrender.com/api/lessor_identificaiton/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -118,10 +114,7 @@ const LessorRegisterPage = () => {
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result);
-              if (result.tokens){
-                localStorage.setItem('token', result.tokens.access); // Save JWT token
-                console.log("Inside register.jsx", result.tokens.access)
-                handleSuccesfullConnection();
+              handleSuccesfullConnection();
                 
           }
           }
