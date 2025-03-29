@@ -10,9 +10,9 @@ const LessorPage = () => {
     return (
         <LogProvider>
             <HeadersRent></HeadersRent>
-                <RoomBannerCall>
+                <RoomBannerLessor>
 
-                </RoomBannerCall>
+                </RoomBannerLessor>
             <Footeras> </Footeras>
         </LogProvider>
     )
