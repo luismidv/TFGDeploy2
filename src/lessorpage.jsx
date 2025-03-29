@@ -19,6 +19,7 @@ const LessorPage = () => {
     return (
         <LogProvider>
             <HeadersRent></HeadersRent>
+            <h1 className="text-6xl font-bold text-[#303ab2]">Your rooms</h1>
                 <RoomBannerLessor>
 
                 </RoomBannerLessor>
