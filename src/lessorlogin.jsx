@@ -11,7 +11,7 @@ import background1 from './static/media/MAINBG/bg1.jpg'
 function Home(){
     const navigate = useNavigate();
 }
-const LoginPage = () => {
+const LessorLoginPage = () => {
   const { setTenantData } = useTenant()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -77,8 +77,8 @@ const checkCookies = (csrf) => {
 const handleSuccesfullConnection = (connection_bool) => {
  
   console.log("Moving to home page")
-  navigate("/home", {replace: true});
-  startAlgorithm()
+  navigate("/lessor", {replace: true});
+  
 }
 
 
@@ -151,34 +151,11 @@ const handleSubmit = (event) => {
     validateForm();
 };
 
-const startAlgorithm =async () => {
-    
-    const token = localStorage.getItem('token');
-    try{
-      console.log("Starting algorithm")
-      const response = await fetch('https://tfgserver.onrender.com/api/algo_view/', {
-        method: 'POST',
-        headers: {
-          'Authorization' : `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        }});
-      const data = await response.json();
-      console.log("Algorithm response ", data)
-      setTenantData(data);
-    
-    }catch(error){  
-        console.log("Error:", error);
-    }
-  }
-
-
-
 return (
-  
   <div className="relative flex min-h-screen items-center justify-center bg-gray-100 px-4">
     <div
-            className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
-            style={{ backgroundImage: `url(${background1})` }}
+        className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
+        style={{ backgroundImage: `url(${background1})` }}
     ></div>
     <div className="relative w-full max-w-md rounded-lg bg-white p-6 shadow-md">
       
@@ -227,7 +204,7 @@ return (
 
       <p className="mt-4 text-center text-sm text-gray-600">
         Not registered yet?{' '}
-        <Link to="/register" className="text-blue-500 hover:underline">
+        <Link to="/lessorregister" className="text-blue-500 hover:underline">
           Sign up
         </Link>
       </p>
@@ -235,4 +212,4 @@ return (
   </div>
 );
 };
-export default LoginPage;
+export default LessorLoginPage;

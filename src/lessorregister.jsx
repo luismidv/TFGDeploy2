@@ -9,7 +9,7 @@ function Home(){
   const navigate = useNavigate();
 }
 
-const RegisterPage = () => {
+const LessorRegisterPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -139,9 +139,10 @@ const RegisterPage = () => {
 
     return (
         <div className="relative flex min-h-screen items-center justify-center bg-gray-100 px-4">
-          <div className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
-                 style={{ backgroundImage: `url(${background1})` }}
-          ></div>
+          <div
+                        className="absolute inset-0 bg-cover bg-center opacity-100 brightness-60"
+                        style={{ backgroundImage: `url(${background1})` }}
+                ></div>
           <div className="relative w-full max-w-md rounded-lg bg-white p-6 shadow-md">
             
             <h2 className="mb-6 text-center text-2xl font-semibold text-gray-700">Register</h2>
@@ -232,4 +233,4 @@ const RegisterPage = () => {
     );
 };
 
-export default RegisterPage;
+export default LessorRegisterPage;

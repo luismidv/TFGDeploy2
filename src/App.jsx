@@ -30,7 +30,8 @@ import {useState, useEffect } from "react";
 import { useLog } from './LogContext'; // Import the useUser hook
 import { TenantProvider } from './TenantContext';
 import { Lessor } from "./lessor.jsx"
-
+import LessorLoginPage from './lessorlogin.jsx';
+import LessorRegisterPage from './lessorregister.jsx';
 
 export function AppExpo(){
   return (
@@ -60,6 +61,8 @@ export function App() {
         <Route path="/inforoom" element={<RoomInfo />} />
         <Route path="/started" element={<Started />} />
         <Route path="/lessor" element ={<Lessor />} />
+        <Route path="/lessorlogin" element= {<LessorLoginPage />} />
+        <Route path="/lessorregister" element= {<LessorRegisterPage />} />
       </Routes>
     </TenantProvider>
     
@@ -262,7 +265,7 @@ export function Intro() {
 
           <Link 
             className="w-full md:w-60 h-14 bg-white text-black text-lg font-semibold flex items-center justify-center rounded-lg shadow-lg"
-            to="/lessor"
+            to="/lessorlogin"
           > I am renting a room </Link>
         </div>
       </div>
