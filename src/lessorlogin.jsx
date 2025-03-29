@@ -86,7 +86,7 @@ const sendBackendData = async (username, password) => {
   try {-
       console.log("🔄 Sending login request...");
 
-      const response = await fetch('https://tfgserver.onrender.com/api/token/', {
+      const response = await fetch('https://tfgserver.onrender.com/api/lessor_identificaiton/', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',
@@ -104,16 +104,8 @@ const sendBackendData = async (username, password) => {
 
       const result = await response.json();
       console.log("🎉 Success! Token received:", result);
+      navigate("/lessorpage")
 
-      if (result.access) {
-          console.log("🔑 Storing token...");
-          localStorage.setItem('token', result.access); // Save JWT token
-
-          // Fetch user details using the token
-          fetchUserData(result.access);
-          handleSuccesfullConnection(true);
-          
-      }
   } catch (error) {
       console.error("⚠️ Fetch error:", error);
       alert("Network error occurred! Check the console for details.");
