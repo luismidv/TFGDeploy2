@@ -6,7 +6,7 @@ import { Footeras } from './App';
 import { LogProvider } from './LogContext';
 import{ useState} from "react";
 
-export function LessorPage{
+const LessorPage = () => {
     return (
         <LogProvider>
             <HeadersRent></HeadersRent>
@@ -17,6 +17,7 @@ export function LessorPage{
         </LogProvider>
     )
 }
+export default LessorPage
 
 
 export function RoomBannerLessor() {

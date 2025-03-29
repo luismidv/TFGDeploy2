@@ -32,7 +32,7 @@ import { TenantProvider } from './TenantContext';
 import { Lessor } from "./lessor.jsx"
 import LessorLoginPage from './lessorlogin.jsx';
 import LessorRegisterPage from './lessorregister.jsx';
-
+import LessorPage from './lessorpage.jsx';
 export function AppExpo(){
   return (
     <div className = "banners-flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 absolute top-[650px] left-[60px] md:left-[280px] ">
@@ -63,6 +63,7 @@ export function App() {
         <Route path="/lessor" element ={<Lessor />} />
         <Route path="/lessorlogin" element= {<LessorLoginPage />} />
         <Route path="/lessorregister" element= {<LessorRegisterPage />} />
+        <Route path="/lessorpage" element = {<LessorPage />} />
       </Routes>
     </TenantProvider>
     
