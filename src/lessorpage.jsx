@@ -5,6 +5,15 @@ import { HeadersRent } from './App';
 import { Footeras } from './App';
 import { LogProvider } from './LogContext';
 import{ useState} from "react";
+import roomImg from "./static/media/roombanner1.webp"
+import roomImg2 from "./static/media/roombanner3.webp"
+import roomImg3 from "./static/media/roombanner2.jpg"
+import roomImg4 from "./static/media/roombanner4.jpg"
+import bedsvg from "./static/media/RoomBanners/bedroom.svg"
+import profsvg from "./static/media/RoomBanners/userprof.svg"
+import directionsvg from "./static/media/RoomBanners/location.svg"
+import eurosvg from "./static/media/RoomBanners/euro.svg"
+import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 
 const LessorPage = () => {
     return (
