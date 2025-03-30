@@ -84,7 +84,7 @@ const handleSuccesfullConnection = (connection_bool) => {
 
 const sendBackendData = async (username, password) => {
   try {
-      const type = "Register";
+      const type = "Login";
       console.log("🔄 Sending login request...");
       const data = {username,password,type}
       const response = await fetch('https://tfgserver.onrender.com/api/lessor_identificaiton/', {
