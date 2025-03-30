@@ -29,6 +29,7 @@ import Started from './started';
 import {useState, useEffect } from "react";
 import { useLog } from './LogContext'; // Import the useUser hook
 import { TenantProvider } from './TenantContext';
+import { LessorProvider } from './lessorcontext.jsx';
 import { Lessor } from "./lessor.jsx"
 import LessorLoginPage from './lessorlogin.jsx';
 import LessorRegisterPage from './lessorregister.jsx';
@@ -48,8 +49,9 @@ export function AppExpo(){
 
 export function App() {
   return (
-      
+    
     <TenantProvider>
+    <LessorProvider>
       <Routes>
         <Route path ="/"  element = {<Intro />} />
         <Route path ="/home"  element = {<HomePage />} />
@@ -65,6 +67,7 @@ export function App() {
         <Route path="/lessorregister" element= {<LessorRegisterPage />} />
         <Route path="/lessorpage" element = {<LessorPage />} />
       </Routes>
+    </LessorProvider>
     </TenantProvider>
     
   );
