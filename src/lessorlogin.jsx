@@ -104,7 +104,7 @@ const sendBackendData = async (username, password) => {
       }
 
       const result = await response.json();
-      setLessorData(result)
+      setLessorData(result);
       console.log("🎉 Success! Lessor logged:", result);
       navigate("/lessorpage")
 
