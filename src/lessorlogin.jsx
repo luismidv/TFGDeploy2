@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AppExpo } from './App';
 import { useNavigate } from 'react-router-dom';
 import { createContext, useContext } from 'react';
-import { useTenant } from "./TenantContext"
+import { useLessor } from './lessorcontext';
 import background1 from './static/media/MAINBG/bg1.jpg'
 
 
@@ -12,7 +12,7 @@ function Home(){
     const navigate = useNavigate();
 }
 const LessorLoginPage = () => {
-  const { setTenantData } = useTenant()
+  const { setLessorData } = useLessor();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -104,7 +104,8 @@ const sendBackendData = async (username, password) => {
       }
 
       const result = await response.json();
-      console.log("🎉 Success! Token received:", result);
+      setLessorData(result)
+      console.log("🎉 Success! Lessor logged:", result);
       navigate("/lessorpage")
 
   } catch (error) {

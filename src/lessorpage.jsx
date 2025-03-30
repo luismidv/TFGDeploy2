@@ -19,7 +19,10 @@ const LessorPage = () => {
     return (
         <LogProvider>
             <HeadersRent></HeadersRent>
-            <h1 className=" position relative left-[120px] top-[100px] text-6xl font-bold text-[#303ab2]">Your rooms</h1>
+            <h2 className=" relative left-[120px] top-[100px] text-6xl font-bold text-[#303ab2]">Your rooms</h2>
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[650px] top-[60px] text-3xl font-bold" to="/lessor">
+                Add room
+            </Link>
                 <RoomBannerLessor>
 
                 </RoomBannerLessor>

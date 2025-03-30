@@ -19,10 +19,6 @@ export function Lessor(){
     const [metters, setMetters] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
-    const [images, setImages] = useState('');
-    const [names, setNames] = useState('');
-    const [telephone, setTelephone] = useState('');
-    const [email, setEmail] = useState('');
      
 
 
@@ -30,7 +26,7 @@ export function Lessor(){
         e.preventDefault();
         try {
           console.log("Sending backend")
-            const formData = {direction,city,state,rooms,bathrooms,metters,price,description,names,telephone,email};
+            const formData = {direction,city,state,rooms,bathrooms,metters,price,description};
             
             const response = await fetch('https://tfgserver.onrender.com/api/lessor_room/', {
                 method: 'POST',
@@ -65,7 +61,7 @@ export function Lessor(){
         <LogProvider>
             <HeadersRent></HeadersRent>
                 <div className="flex min-h-screen items-center justify-center bg-gray-100 px-4">
-                    <div className="relative top-[400px] w-full max-w-md rounded-lg bg-white p-6 shadow-md">
+                    <div className="relative top-[200px] w-full max-w-md rounded-lg bg-white p-6 shadow-md">
                       <h2 className="mb-6 text-center text-2xl font-semibold text-gray-700">Room registration</h2>
                       {/* THIS CODE REFERS TO THE ROOM PART OF THE FORM */}
                       <h3 className="mb-6 text-center text-2xl font-semibold text-gray-700">Room section</h3>
@@ -204,6 +200,7 @@ export function Lessor(){
                           </label>
                           <label className="cursor-pointer bg-blue-500 text-white px-4 rounded hover:bg-blue-600">
                             Choose Files
+                          </label>
                           <input
                             type="file"
                             id="images"
@@ -211,61 +208,8 @@ export function Lessor(){
                             className="hidden"
                             accept="image/*"
                             multiple
-                            
-                            onChange={setImages}
-                        />
-                            </label>
-                        {/* THIS CODE REFERS TO THE ROOM PART OF THE FORM */}
-                        <h3 className="mb-6 text-center text-2xl font-semibold text-gray-700">Lessor section </h3>
-                            <div>
-                            <label htmlFor="names-input" className="block text-sm font-medium text-gray-600">
-                                Names
-                            </label>
-                            <input
-                                type="text"
-                                id="names-input"
-                                name="names"
-                                className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
-                                placeholder="Lessor names"
-                                required
-                                value={names}
-                                onChange={(e) => setNames(e.target.value)}
-                            />
-                            </div>
-                            <div>
-                            <label htmlFor="telephone" className="block text-sm font-medium text-gray-600">
-                                Telephone
-                            </label>
-                            <input
-                                type="text"
-                                id="telephone"
-                                name="telephone"
-                                className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
-                                placeholder="Lessor telephone"
-                                required
-                                value={telephone}
-                                onChange={(e) => setTelephone(e.target.value)}
-                            />
-                            </div>
-                            <div>
-                            <label htmlFor="email-input" className="block text-sm font-medium text-gray-600">
-                                Email
-                            </label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                className="mt-1 w-full rounded border-gray-300 p-2 focus:border-blue-500 focus:ring-blue-500"
-                                placeholder="Lessor email"
-                                required
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            </div>
-
-                            </div>
-                        
-                
+                            onChange={setImages}/>
+                        </div>
                         <button
                           type="submit"
                           className="w-full rounded bg-[#303ab2] px-4 py-2 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">
