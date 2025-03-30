@@ -20,7 +20,7 @@ const LessorPage = () => {
         <LogProvider>
             <HeadersRent></HeadersRent>
             <h2 className=" relative left-[120px] top-[100px] text-6xl font-bold text-[#303ab2]">Your rooms</h2>
-            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[650px] top-[60px] text-3xl font-bold" to="/lessor">
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[770px] top-[60px] text-3xl font-bold" to="/lessor">
                 Add room
             </Link>
                 <RoomBannerLessor>
@@ -94,9 +94,6 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             <img className = "direction-img absolute top-[250px]" src = {directionsvg}></img>
             <p className = "direction-p absolute top-[260px]"> {direction}</p>
             
-            <Link className="room-info absolute top-[450px]" to ="/inforoom">
-                Visit
-            </Link>
             {description.split("\n").map((line,index) => (
                 <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
             ))}
