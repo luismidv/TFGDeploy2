@@ -166,17 +166,16 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
     export function RecomInfo() {
         const { tenantData } = useTenant();
         const [tenants, setTenants] = useState([]);
-        console.log(tenantData.Names, tenantData.Age)
         
         useEffect(() => {
-            if (tenantData && tenantData.Names && tenantData.Age && tenantData.Smoking && tenantData.Email && tenantData.Similarity) {
+            if (tenantData && tenantData.names && tenantData.age && tenantData.smoking && tenantData.email && tenantData.similarity) {
                 try {
-                    const formattedTenants = Object.keys(tenantData.Names).map((key, index) => ({
-                        Names: tenantData.Names[index],
-                        Age: tenantData.Age[index],
-                        Smoking: tenantData.Smoking[index] === "Yes" ? "Smokes" : "No smoking",
-                        Email: tenantData.Email[index],
-                        Similarity: tenantData.Similarity[index]
+                    const formattedTenants = Object.keys(tenantData.names).map((key, index) => ({
+                        names: tenantData.names[index],
+                        age: tenantData.age[index],
+                        smoking: tenantData.smoking[index] === "Yes" ? "Smokes" : "No smoking",
+                        email: tenantData.email[index],
+                        similarity: tenantData.similarity[index]
                     }));
                     setTenants(formattedTenants);
                 } catch (error) {
