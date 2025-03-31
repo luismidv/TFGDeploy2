@@ -207,11 +207,11 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
             email.length > maximumLength ? email.slice(0, maximumLength) + "...": email;
     
         const features = [
-            tenant.Names,
-            `${tenant.Age} y/o`,
-            tenant.Smoking,
+            tenant.names,
+            `${tenant.age} y/o`,
+            tenant.smoking,
             `${tenant.Similarity}% Similarity`,
-            changeEmail(tenant.Email)
+            changeEmail(tenant.email)
         ];
     
         return (
