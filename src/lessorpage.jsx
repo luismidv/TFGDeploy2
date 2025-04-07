@@ -45,12 +45,12 @@ export function RoomBannerLessor() {
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
-          <RoomLessor label = {"Room at the center of Valencia"} img = {roomImg}
-          rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
+          <RoomLessor label = {lessorData.rooms_data[0].description}  img = {roomImg}
+          rooms = {lessorData.rooms_data[0].rooms} metters = {lessorData.rooms_data[0].metters} bathrooms = {lessorData.rooms_data[0].bathrooms} price = {lessorData.rooms_data[0].price} bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = "Mark Johnson"
-          directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
-          description = "Beatiful house in the center "/>
+          profilesvg= {profsvg} username = {lessorData.rooms_data[0].username}
+          directionsvg = {directionsvg} direction ={lessorData.rooms_data[0].direction}
+          description = {lessorData.rooms_data[0].description}/>
     
           <RoomLessor label = "Room at the center of Madrid" img = {roomImg2} 
           rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
