@@ -44,22 +44,22 @@ export function RoomBannerLessor() {
           <RoomLessor label = "Room at the center of Valencia" img = {roomImg}
           rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = "PepitoVendepisos"
+          profilesvg= {profsvg} username = "Mark Johnson"
           directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
           description = "Beatiful house in the center "/>
     
           <RoomLessor label = "Room at the center of Madrid" img = {roomImg2} 
           rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg = {profsvg} username = "PepitoVendepisos"
-          directionsvg = {directionsvg} direction="Joaquin Sorolla street"
+          profilesvg = {profsvg} username = "Jose Alvarez"
+          directionsvg = {directionsvg} direction="Mayor square"
           description = "Beatiful house in the center "/>
     
           <RoomLessor label = "Room at the center of Seville" img= {roomImg3} 
           rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = "PepitoVendepisos"
-          directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
+          profilesvg= {profsvg} username = "Mark Johnson"
+          directionsvg = {directionsvg} direction ="Seville center"
           description = "Beatiful house in the center "/>
           
         </section>
@@ -93,7 +93,13 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             
             <img className = "direction-img absolute top-[250px]" src = {directionsvg}></img>
             <p className = "direction-p absolute top-[260px]"> {direction}</p>
-            
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
+                Edit room
+            </Link>
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
+                Delete room
+            </Link>
+
             {description.split("\n").map((line,index) => (
                 <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
             ))}

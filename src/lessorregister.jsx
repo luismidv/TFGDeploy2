@@ -86,7 +86,7 @@ const LessorRegisterPage = () => {
     };
 
     const handleSuccesfullConnection = () => {
-      navigate("/lessor")
+      navigate("/lessorpage")
     }
 
     const sendBackendData = async (email, password, username) => {
