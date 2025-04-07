@@ -56,7 +56,7 @@ export function RoomBannerLessor() {
         <RoomLessor label = {lessorData.rooms_data[1].description}  img = {roomImg}
           rooms = {lessorData.rooms_data[1].rooms} metters = {lessorData.rooms_data[1].metters} 
           bathrooms = {lessorData.rooms_data[1].bathrooms} price = {lessorData.rooms_data[1].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
+          bedroomsvg = {roomImg2}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[1].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[1].direction}
           description = {lessorData.rooms_data[1].description}/>
@@ -64,7 +64,7 @@ export function RoomBannerLessor() {
         <RoomLessor label = {lessorData.rooms_data[2].description}  img = {roomImg}
           rooms = {lessorData.rooms_data[2].rooms} metters = {lessorData.rooms_data[2].metters} 
           bathrooms = {lessorData.rooms_data[2].bathrooms} price = {lessorData.rooms_data[2].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
+          bedroomsvg = {roomImg3}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[2].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[2].direction}
           description = {lessorData.rooms_data[2].description}/>
