@@ -3,6 +3,7 @@ import "./static/css/login.css"
 import { useNavigate } from 'react-router-dom';
 import {Eye, EyeOff} from 'lucide-react';
 import background1 from './static/media/MAINBG/bg1.jpg'
+import { useLessor } from './lessorcontext';
 
 
 function Home(){
@@ -10,6 +11,7 @@ function Home(){
 }
 
 const LessorRegisterPage = () => {
+    const { setLessorData } = useLessor();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
@@ -113,8 +115,10 @@ const LessorRegisterPage = () => {
               console.error("❌ Error details:", errorText);
           } else {
               const result = await response.json();
+              setLessorData(result);
               console.log("🎉 Success! Response from backend:", result);
               handleSuccesfullConnection();
+
                 
           }
           
