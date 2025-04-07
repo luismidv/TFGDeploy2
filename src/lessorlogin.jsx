@@ -88,6 +88,7 @@ const sendBackendData = async (username, password) => {
       console.log("🔄 Sending login request...");
       const data = {username,password,type}
       console.log(password)
+      console.log(username)
       const response = await fetch('https://tfgserver.onrender.com/api/lessor_identificaiton/', {
           method: 'POST',
           headers: {
