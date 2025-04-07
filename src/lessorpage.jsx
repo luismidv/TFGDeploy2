@@ -40,12 +40,12 @@ export function RoomBannerLessor() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     const { lessorData } = useLessor();
-    console.log(lessorData.roomsData.direction)
+    console.log(lessorData.roomsData[0].direction)
     return(
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
-          <RoomLessor label = {"Room at the center of Valencia"} img = {roomImg}
+          <RoomLessor label = {lessorData.roomsData[0].description} img = {roomImg}
           rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = "Mark Johnson"
