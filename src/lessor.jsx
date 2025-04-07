@@ -10,7 +10,7 @@ import{ useState} from "react";
 
 export function Lessor(){
     const navigate = useNavigate();
-    
+    const [images, setImages] = useState('');
     const [direction, setDirection] = useState('');
     const [city, setCity] = useState('');
     const [state, setState] = useState('');
