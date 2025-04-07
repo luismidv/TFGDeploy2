@@ -14,6 +14,8 @@ import profsvg from "./static/media/RoomBanners/userprof.svg"
 import directionsvg from "./static/media/RoomBanners/location.svg"
 import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
+import { useLessor } from './lessorcontext';
+
 
 const LessorPage = () => {
     return (
@@ -37,6 +39,8 @@ export function RoomBannerLessor() {
     //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
+    const { lessorData } = useLessor();
+    console.log(lessorData)
     return(
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
