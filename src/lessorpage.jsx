@@ -46,25 +46,28 @@ export function RoomBannerLessor() {
         
 
           <RoomLessor label = {lessorData.rooms_data[0].description}  img = {roomImg}
-          rooms = {lessorData.rooms_data[0].rooms} metters = {lessorData.rooms_data[0].metters} bathrooms = {lessorData.rooms_data[0].bathrooms} price = {lessorData.rooms_data[0].price} bathroomsvg = {bathroomsvg}
+          rooms = {lessorData.rooms_data[0].rooms} metters = {lessorData.rooms_data[0].metters} 
+          bathrooms = {lessorData.rooms_data[0].bathrooms} price = {lessorData.rooms_data[0].price} bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[0].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[0].direction}
           description = {lessorData.rooms_data[0].description}/>
     
-          <RoomLessor label = "Room at the center of Madrid" img = {roomImg2} 
-          rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
+        <RoomLessor label = {lessorData.rooms_data[1].description}  img = {roomImg}
+          rooms = {lessorData.rooms_data[1].rooms} metters = {lessorData.rooms_data[1].metters} 
+          bathrooms = {lessorData.rooms_data[1].bathrooms} price = {lessorData.rooms_data[1].price} bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg = {profsvg} username = "Jose Alvarez"
-          directionsvg = {directionsvg} direction="Mayor square"
-          description = "Beatiful house in the center "/>
+          profilesvg= {profsvg} username = {lessorData.rooms_data[1].username}
+          directionsvg = {directionsvg} direction ={lessorData.rooms_data[1].direction}
+          description = {lessorData.rooms_data[1].description}/>
     
-          <RoomLessor label = "Room at the center of Seville" img= {roomImg3} 
-          rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
+        <RoomLessor label = {lessorData.rooms_data[2].description}  img = {roomImg}
+          rooms = {lessorData.rooms_data[2].rooms} metters = {lessorData.rooms_data[2].metters} 
+          bathrooms = {lessorData.rooms_data[2].bathrooms} price = {lessorData.rooms_data[2].price} bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = "Mark Johnson"
-          directionsvg = {directionsvg} direction ="Seville center"
-          description = "Beatiful house in the center "/>
+          profilesvg= {profsvg} username = {lessorData.rooms_data[2].username}
+          directionsvg = {directionsvg} direction ={lessorData.rooms_data[2].direction}
+          description = {lessorData.rooms_data[2].description}/>
           
         </section>
       )
