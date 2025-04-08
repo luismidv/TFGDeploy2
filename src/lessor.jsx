@@ -5,11 +5,13 @@ import { HeadersRent } from './App';
 import { Footeras } from './App';
 import { LogProvider } from './LogContext';
 import{ useState} from "react";
-
+import { useLessor } from './lessorcontext';
 
 
 export function Lessor(){
     const navigate = useNavigate();
+    const { lessorData } = useLessor();
+    console.log(lessorData)
     const [images, setImages] = useState('');
     const [direction, setDirection] = useState('');
     const [city, setCity] = useState('');
@@ -25,8 +27,8 @@ export function Lessor(){
     const sendBackendData = async (e) => {
         e.preventDefault();
         try {
-          console.log("Sending backend")
-            const formData = {direction,city,state,rooms,bathrooms,metters,price,description};
+          
+          const formData = {direction,city,state,rooms,bathrooms,metters,price,description,lessorData};
             
             const response = await fetch('https://tfgserver.onrender.com/api/lessor_room/', {
                 method: 'POST',
