@@ -40,8 +40,15 @@ export function RoomBannerLessor() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     const { lessorData } = useLessor();
-    console.log(lessorData.rooms_data[0].direction)
+    if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
+        return (
+            <NoRoomLessor>
+                
+            </NoRoomLessor>
+        )
+    }
     return(
+        
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
@@ -51,23 +58,23 @@ export function RoomBannerLessor() {
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[0].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[0].direction}
-          description = {lessorData.rooms_data[0].description}/>
+          description = {lessorData.rooms_data[0].description} room_id = {lessorData.rooms_data[0].id}/>
     
-        <RoomLessor label = {lessorData.rooms_data[1].description}  img = {roomImg}
+        <RoomLessor label = {lessorData.rooms_data[1].description}  img = {roomImg2}
           rooms = {lessorData.rooms_data[1].rooms} metters = {lessorData.rooms_data[1].metters} 
           bathrooms = {lessorData.rooms_data[1].bathrooms} price = {lessorData.rooms_data[1].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {roomImg2}  eurosvg = {eurosvg} 
+          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[1].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[1].direction}
-          description = {lessorData.rooms_data[1].description}/>
+          description = {lessorData.rooms_data[1].description} room_id = {lessorData.rooms_data[1].id}/>
     
-        <RoomLessor label = {lessorData.rooms_data[2].description}  img = {roomImg}
+        <RoomLessor label = {lessorData.rooms_data[2].description}  img = {roomImg3}
           rooms = {lessorData.rooms_data[2].rooms} metters = {lessorData.rooms_data[2].metters} 
           bathrooms = {lessorData.rooms_data[2].bathrooms} price = {lessorData.rooms_data[2].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {roomImg3}  eurosvg = {eurosvg} 
+          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = {lessorData.rooms_data[2].username}
           directionsvg = {directionsvg} direction ={lessorData.rooms_data[2].direction}
-          description = {lessorData.rooms_data[2].description}/>
+          description = {lessorData.rooms_data[2].description} room_id = {lessorData.rooms_data[2].id}/>
           
         </section>
       )
@@ -76,7 +83,7 @@ export function RoomBannerLessor() {
 
 
 export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
-    bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description}) {
+    bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description, room_id}) {
     
     return(
         <div className = "room-label lg:w-[800px] lg:h-[500px] md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] lg:left-[300px] md:left-[300px] mb-300 md:mb-0">
@@ -100,6 +107,25 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             
             <img className = "direction-img absolute top-[250px]" src = {directionsvg}></img>
             <p className = "direction-p absolute top-[260px]"> {direction}</p>
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
+                Edit room
+            </Link>
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
+                Delete room
+            </Link>
+
+            {description.split("\n").map((line,index) => (
+                <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
+            ))}
+        </div>
+    )
+}
+
+export function NoRoomLessor({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
+    bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description, room_id}) {
+    
+    return(
+        <div>
             <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
                 Edit room
             </Link>
