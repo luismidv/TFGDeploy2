@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from "react";
+import React, { createContext, useState, useContext,useEffect  } from "react";
 
 const LessorContext = createContext();
 export const LessorProvider = ({children}) => {
@@ -25,7 +25,7 @@ export const LessorProvider = ({children}) => {
             localStorage.removeItem("lessorData");
         }
     }, [lessorData]);
-    
+
     return (
         <LessorContext.Provider value = {{lessorData, setLessorData, lessorId, setLessorId}}>
         {children}
