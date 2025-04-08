@@ -55,7 +55,7 @@ export function RoomBannerLessor() {
             {lessorData.rooms_data.map((room,index) => (
                 
            
-          <RoomLessor key = {room.id || index} label={room.description} img = {roomImg}
+          <RoomLessor key = {room.id || index} label="Room at the center of Valencia" img = {roomImg}
           rooms={room.rooms}
           metters={room.metters}
           bathrooms={room.bathrooms}
