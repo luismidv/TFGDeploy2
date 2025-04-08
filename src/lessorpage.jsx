@@ -43,7 +43,7 @@ export function RoomBannerLessor() {
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (
             <NoRoomLessor>
-                
+
             </NoRoomLessor>
         )
     }
@@ -132,10 +132,6 @@ export function NoRoomLessor({label, img, rooms, metters, bathrooms,price, bedro
             <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
                 Delete room
             </Link>
-
-            {description.split("\n").map((line,index) => (
-                <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
-            ))}
         </div>
     )
 }
