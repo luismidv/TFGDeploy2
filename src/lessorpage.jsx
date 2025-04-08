@@ -52,33 +52,28 @@ export function RoomBannerLessor() {
         
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
+            {lessorData.rooms_data.map((room,index) => (
+                
+           
+          <RoomLessor key = {room.id || index} label={room.description} img = {roomImg}
+          rooms={room.rooms}
+          metters={room.metters}
+          bathrooms={room.bathrooms}
+          price={room.price}
+          bathroomsvg={bathroomsvg}
+          bedroomsvg={bedsvg}
+          eurosvg={eurosvg}
+          profilesvg={profsvg}
+          username={room.username}
+          directionsvg={directionsvg}
+          direction={room.direction}
+          description={room.description}
+          room_id={room.id} 
+        />
 
-          <RoomLessor label = {lessorData.rooms_data[0].description}  img = {roomImg}
-          rooms = {lessorData.rooms_data[0].rooms} metters = {lessorData.rooms_data[0].metters} 
-          bathrooms = {lessorData.rooms_data[0].bathrooms} price = {lessorData.rooms_data[0].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = {lessorData.rooms_data[0].username}
-          directionsvg = {directionsvg} direction ={lessorData.rooms_data[0].direction}
-          description = {lessorData.rooms_data[0].description} room_id = {lessorData.rooms_data[0].id}/>
-    
-        <RoomLessor label = {lessorData.rooms_data[1].description}  img = {roomImg2}
-          rooms = {lessorData.rooms_data[1].rooms} metters = {lessorData.rooms_data[1].metters} 
-          bathrooms = {lessorData.rooms_data[1].bathrooms} price = {lessorData.rooms_data[1].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = {lessorData.rooms_data[1].username}
-          directionsvg = {directionsvg} direction ={lessorData.rooms_data[1].direction}
-          description = {lessorData.rooms_data[1].description} room_id = {lessorData.rooms_data[1].id}/>
-    
-        <RoomLessor label = {lessorData.rooms_data[2].description}  img = {roomImg3}
-          rooms = {lessorData.rooms_data[2].rooms} metters = {lessorData.rooms_data[2].metters} 
-          bathrooms = {lessorData.rooms_data[2].bathrooms} price = {lessorData.rooms_data[2].price} bathroomsvg = {bathroomsvg}
-          bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = {lessorData.rooms_data[2].username}
-          directionsvg = {directionsvg} direction ={lessorData.rooms_data[2].direction}
-          description = {lessorData.rooms_data[2].description} room_id = {lessorData.rooms_data[2].id}/>
-          
+        ))}  
         </section>
-      )
+      );
 }
 
 
