@@ -42,8 +42,6 @@ export function RoomBannerLessor() {
     const { lessorData, lessorId } = useLessor();
     const { setLessorId } = useLessor();
     
-    console.log(lessorData.lessor_id)
-
     setLessorId(lessorData.lessor_id)
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (

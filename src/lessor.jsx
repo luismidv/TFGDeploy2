@@ -11,7 +11,6 @@ import { useLessor } from './lessorcontext';
 export function Lessor(){
     const navigate = useNavigate();
     const { lessorId } = useLessor();
-    console.log(lessorData)
     const [images, setImages] = useState('');
     const [direction, setDirection] = useState('');
     const [city, setCity] = useState('');
