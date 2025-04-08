@@ -39,7 +39,10 @@ export function RoomBannerLessor() {
     //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
-    const { lessorData } = useLessor();
+    const { lessorData, lessorId } = useLessor();
+    console.log(lessorData.lessor_id)
+
+    setLessorId(lessorData.lessor_id)
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (
             <div className = "text-[#303ab2] relative left-[120px] top-[160px] text-3xl font-bold"> There are rooms created yet</div>
