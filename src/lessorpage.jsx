@@ -40,6 +40,8 @@ export function RoomBannerLessor() {
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     const { lessorData, lessorId } = useLessor();
+    const { setLessorId } = useLessor();
+    
     console.log(lessorData.lessor_id)
 
     setLessorId(lessorData.lessor_id)
