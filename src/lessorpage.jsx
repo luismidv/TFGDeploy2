@@ -42,9 +42,7 @@ export function RoomBannerLessor() {
     const { lessorData } = useLessor();
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (
-            <NoRoomLessor>
-
-            </NoRoomLessor>
+            <div className = "text-[#303ab2] relative left-[120px] top-[160px] text-3xl font-bold"> There are rooms created yet</div>
         )
     }
     return(
@@ -117,21 +115,6 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             {description.split("\n").map((line,index) => (
                 <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
             ))}
-        </div>
-    )
-}
-
-export function NoRoomLessor({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
-    bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description, room_id}) {
-    
-    return(
-        <div>
-            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
-                Edit room
-            </Link>
-            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
-                Delete room
-            </Link>
         </div>
     )
 }
