@@ -19,6 +19,8 @@ import { useLessor } from './lessorcontext';
 const deleteRoom = async (room_id, type) => {
     
     try {
+        console.log(room_id)
+        console.log(type)
         const response = await fetch('https://tfgserver.onrender.com/api/room_mod/', {
             method: 'POST',
             headers: {
