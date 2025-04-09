@@ -60,7 +60,7 @@
         } else {
             const result = await response.json();
             console.log("🎉 Success! Response from backend:", result );
-            navigate("/lessorpage", {replace: true});
+            await refreshLessorData(lessorId);
             
             
         }
@@ -76,6 +76,7 @@
         //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
         const { lessorData, lessorId, refreshLessorData } = useLessor();
         const { setLessorId } = useLessor();
+        
         
         setLessorId(lessorData.lessor_id)
         if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
