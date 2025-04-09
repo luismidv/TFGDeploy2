@@ -48,7 +48,7 @@ export function Lessor(){
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result );
-              await refreshLessorData(lessorId);
+              await refreshLessorData();
               navigate("/lessorpage", {replace: true});
               
              
