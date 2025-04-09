@@ -15,40 +15,43 @@ import directionsvg from "./static/media/RoomBanners/location.svg"
 import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { useLessor } from './lessorcontext';
+import { useNavigate } from 'react-router-dom';
 
-const deleteRoom = async (room_id, type) => {
-    
-    try {
-        console.log(room_id)
-        console.log(type)
-        const response = await fetch('https://tfgserver.onrender.com/api/room_mod/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                
-            },
-            body: JSON.stringify({room_id:room_id, action:type }),
-        });
 
-        
-        if (!response.ok) {
-          console.error("❌ Server responded with an error:", response.status, response.statusText);
-          const errorText = await response.text();
-          console.error("❌ Error details:", errorText);
-          
-      } else {
-          const result = await response.json();
-          console.log("🎉 Success! Response from backend:", result );
-          navigate("/lessorpage", {replace: true});
-         
-          
-      }
-    }catch (error) {
-      console.error("⚠️ Fetch error (caught in catch block):", error);
-      alert("Network error occurred! Check the console for details.");
-  };
-};
 const LessorPage = () => {
+    const deleteRoom = async (room_id, type) => {
+    
+        try {
+            console.log(room_id)
+            console.log(type)
+            const response = await fetch('https://tfgserver.onrender.com/api/room_mod/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    
+                },
+                body: JSON.stringify({room_id:room_id, action:type }),
+            });
+    
+            
+            if (!response.ok) {
+              console.error("❌ Server responded with an error:", response.status, response.statusText);
+              const errorText = await response.text();
+              console.error("❌ Error details:", errorText);
+              
+          } else {
+              const result = await response.json();
+              console.log("🎉 Success! Response from backend:", result );
+              navigate("/lessorpage", {replace: true});
+             
+              
+          }
+        }catch (error) {
+          console.error("⚠️ Fetch error (caught in catch block):", error);
+          alert("Network error occurred! Check the console for details.");
+      };
+    };
+    
     return (
         <LogProvider>
             <HeadersRent></HeadersRent>
@@ -72,7 +75,7 @@ export function RoomBannerLessor() {
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     const { lessorData, lessorId } = useLessor();
     const { setLessorId } = useLessor();
-    
+    const navigate = useNavigate();
     setLessorId(lessorData.lessor_id)
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (
