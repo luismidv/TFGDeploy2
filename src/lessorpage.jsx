@@ -28,7 +28,7 @@
                 <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[770px] top-[60px] text-3xl font-bold" to="/lessor">
                     Add room
                 </Link>
-                    <RoomBannerLessor>
+                    <RoomBannerLessor navigate = {navigate}>
 
                     </RoomBannerLessor>
                 <Footeras> </Footeras>
@@ -70,7 +70,7 @@
     };
     };
 
-    export function RoomBannerLessor() {
+    export function RoomBannerLessor({ navigate }) {
         //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
         //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
         //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
