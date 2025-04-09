@@ -137,7 +137,7 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
                 Edit room
             </Link>
-            <button className="w-[250px] h-[120px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete")}>
+            <button className="w-[150px] h-[60px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete")}>
                 Delete room
             </button>
 
