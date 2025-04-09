@@ -10,7 +10,7 @@ import { useLessor } from './lessorcontext';
 
 export function Lessor(){
     const navigate = useNavigate();
-    const { lessorId } = useLessor();
+    const { lessorId,refreshLessorData } = useLessor();
     const [images, setImages] = useState('');
     const [direction, setDirection] = useState('');
     const [city, setCity] = useState('');

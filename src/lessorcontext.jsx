@@ -6,6 +6,12 @@ export const LessorProvider = ({children}) => {
         const savedData = localStorage.getItem("lessorData");
         return savedData ? JSON.parse(savedData) : null;
     });
+
+    const refreshLessorData = async (id) => {
+        const response = await fetch(`https://tfgserver.onrender.com/api/lessor_data/${id}`);
+        const data = await response.json();
+        setLessorData(data);
+      };
     
     const [lessorId, setLessorId] = useState(() => {
         return localStorage.getItem("lessorId") || null;

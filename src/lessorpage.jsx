@@ -74,7 +74,7 @@
         //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
         //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
         //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
-        const { lessorData, lessorId } = useLessor();
+        const { lessorData, lessorId, refreshLessorData } = useLessor();
         const { setLessorId } = useLessor();
         
         setLessorId(lessorData.lessor_id)
