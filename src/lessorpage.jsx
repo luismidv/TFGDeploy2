@@ -16,7 +16,36 @@ import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { useLessor } from './lessorcontext';
 
+const deleteRoom = async (room_id, type) => {
+    
+    try {
+        const response = await fetch('https://tfgserver.onrender.com/api/room_mod/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                
+            },
+            body: JSON.stringify({room_id:room_id, action:type }),
+        });
 
+        
+        if (!response.ok) {
+          console.error("❌ Server responded with an error:", response.status, response.statusText);
+          const errorText = await response.text();
+          console.error("❌ Error details:", errorText);
+          
+      } else {
+          const result = await response.json();
+          console.log("🎉 Success! Response from backend:", result );
+          navigate("/lessorpage", {replace: true});
+         
+          
+      }
+    }catch (error) {
+      console.error("⚠️ Fetch error (caught in catch block):", error);
+      alert("Network error occurred! Check the console for details.");
+  };
+};
 const LessorPage = () => {
     return (
         <LogProvider>
@@ -106,9 +135,9 @@ export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroom
             <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[220px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
                 Edit room
             </Link>
-            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" to="/lessor">
+            <button className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[-130px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete")}>
                 Delete room
-            </Link>
+            </button>
 
             {description.split("\n").map((line,index) => (
                 <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
