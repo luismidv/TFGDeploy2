@@ -11,10 +11,10 @@ export const LessorProvider = ({children}) => {
         try {
             const type = "Refresh";
             console.log("🔄 Sending login request...");
-            
             const username = lessorData?.rooms_data?.[0]?.username
             const data = {username,type}
             console.log(username)
+            console.log(type)
             const response = await fetch('https://tfgserver.onrender.com/api/lessor_identificaiton/', {
                 method: 'POST',
                 headers: {
