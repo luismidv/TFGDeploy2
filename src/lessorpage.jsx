@@ -16,6 +16,27 @@ import eurosvg from "./static/media/RoomBanners/euro.svg"
 import bathroomsvg from "./static/media/RoomBanners/bathroom.svg"
 import { useLessor } from './lessorcontext';
 
+
+
+
+const LessorPage = () => {
+    const navigate = useNavigate();
+    return (
+        <LogProvider>
+            <HeadersRent></HeadersRent>
+            <h2 className=" relative left-[120px] top-[100px] text-6xl font-bold text-[#303ab2]">Your rooms</h2>
+            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[770px] top-[60px] text-3xl font-bold" to="/lessor">
+                Add room
+            </Link>
+                <RoomBannerLessor>
+
+                </RoomBannerLessor>
+            <Footeras> </Footeras>
+        </LogProvider>
+    )
+}
+export default LessorPage
+
 const deleteRoom = async (room_id, type) => {
     
     try {
@@ -49,33 +70,13 @@ const deleteRoom = async (room_id, type) => {
   };
 };
 
-
-const LessorPage = () => {
-    
-    return (
-        <LogProvider>
-            <HeadersRent></HeadersRent>
-            <h2 className=" relative left-[120px] top-[100px] text-6xl font-bold text-[#303ab2]">Your rooms</h2>
-            <Link className="w-[450px] h-[300px] bg-[#303ab2] rounded-xl text-white relative left-[770px] top-[60px] text-3xl font-bold" to="/lessor">
-                Add room
-            </Link>
-                <RoomBannerLessor>
-
-                </RoomBannerLessor>
-            <Footeras> </Footeras>
-        </LogProvider>
-    )
-}
-export default LessorPage
-
-
 export function RoomBannerLessor() {
     //CREAR UN LOGPROVIDER PARA LAS LLAMADAS A ROOMBANNER
     //DENTRO DE LOS LOGPROVIDER METEMOS LOS DATOS OBTENIDOS A TRAVES DE LA BASE DE DATOS
     //DE MANERA QUE SI ACCEDEMOS AL PISO NOS MUESTRE LOS DATOS DINAMICAMENTE NO PLACEHOLDER
     const { lessorData, lessorId } = useLessor();
     const { setLessorId } = useLessor();
-    const navigate = useNavigate();
+    
     setLessorId(lessorData.lessor_id)
     if (!lessorData?.rooms_data || lessorData.rooms_data.length === 0) {
         return (
