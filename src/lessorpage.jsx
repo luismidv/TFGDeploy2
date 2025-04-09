@@ -44,7 +44,7 @@
             console.log(type)
             const response = await fetch('https://tfgserver.onrender.com/api/room_mod/', {
                 method: 'POST',
-                headers: {
+                headers: {  
                     'Content-Type': 'application/json',
                     
                 },

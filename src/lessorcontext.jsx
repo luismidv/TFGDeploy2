@@ -33,7 +33,7 @@ export const LessorProvider = ({children}) => {
     }, [lessorData]);
 
     return (
-        <LessorContext.Provider value = {{lessorData, setLessorData, lessorId, setLessorId}}>
+        <LessorContext.Provider value = {{lessorData, setLessorData, lessorId, setLessorId, refreshLessorData}}>
         {children}
         </LessorContext.Provider>
     )}
