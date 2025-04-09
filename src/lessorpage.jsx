@@ -38,7 +38,7 @@
     export default LessorPage
 
     const deleteRoom = async (room_id, type, navigate) => {
-        const { refreshLessorData } = useLessor();
+        const { lessorId,refreshLessorData } = useLessor();
         try {
             console.log(room_id)
             console.log(type)

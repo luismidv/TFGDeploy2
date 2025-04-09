@@ -24,6 +24,7 @@ export function Lessor(){
 
 
     const sendBackendData = async (e) => {
+        
         e.preventDefault();
         try {
           
@@ -47,7 +48,9 @@ export function Lessor(){
           } else {
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result );
+              await refreshLessorData(lessorId);
               navigate("/lessorpage", {replace: true});
+              
              
               
           }
