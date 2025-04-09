@@ -7,7 +7,7 @@ export const LessorProvider = ({children}) => {
         return savedData ? JSON.parse(savedData) : null;
     });
 
-    const refreshLessorData = async () => {
+    const refreshLessorData = async (navigate) => {
         try {
             const type = "Refresh";
             console.log("🔄 Sending login request...");

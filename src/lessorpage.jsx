@@ -60,7 +60,7 @@
         } else {
             const result = await response.json();
             console.log("🎉 Success! Response from backend:", result );
-            await refreshLessorData();
+            await refreshLessorData(navigate);
             
             
         }
