@@ -107,6 +107,7 @@
             description={room.description}
             room_id={room.id} 
             navigate={navigate}
+            refreshLessorData={refreshLessorData}
             />
 
             ))}  
@@ -117,7 +118,7 @@
 
 
     export function RoomLessor({label, img, rooms, metters, bathrooms,price, bedroomsvg, 
-        bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description, room_id, navigate}) {
+        bathroomsvg, eurosvg,profilesvg, username, directionsvg, direction, description, room_id, navigate,refreshLessorData}) {
         
         return(
             <div className = "room-label lg:w-[800px] lg:h-[500px] md:w-[800px] md:h-[500px] w-[500px] h-[100px] left-[-320px] top-[-300px] lg:left-[300px] md:left-[300px] mb-300 md:mb-0">
