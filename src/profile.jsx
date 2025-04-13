@@ -24,7 +24,7 @@ import { Footeras } from "./App";
 import { Headers } from "./App";
 import { LogProvider } from './LogContext';
 import { useLog } from './LogContext'; // Import the context hook
-
+import { useTenant } from "./TenantContext";
 
 
 function Home(){
@@ -32,6 +32,7 @@ function Home(){
 }
 
 export function ProfileForm(){
+  const { setTenantData } = useTenant()
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   console.log(token)
