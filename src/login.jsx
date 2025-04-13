@@ -165,6 +165,7 @@ const startAlgorithm =async () => {
       const data = await response.json();
       console.log("Algorithm response ", data)
       setTenantData(data);
+      console.log(data)
     
     }catch(error){  
         console.log("Error:", error);

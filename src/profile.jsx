@@ -64,7 +64,6 @@ export function ProfileForm(){
       //  -SEND INFO OF THE RECENTLY LOGGED USER
       //  -BACKEND STORE THE INFO IN THE TENANTS TABLE
      // Prevent default form submission behavior
-     alert("Primer check")
      
      try {
       console.log("Sending backend")
@@ -86,7 +85,10 @@ export function ProfileForm(){
           
       } else {
           const result = await response.json();
+          const data = result.data
+          setTenantData(data);
           console.log("🎉 Success! Response from backend:", result);
+          console.log(data)
           navigate("/home", {replace: true});
          
           
