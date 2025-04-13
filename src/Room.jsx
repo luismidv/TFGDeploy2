@@ -168,7 +168,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const [tenants, setTenants] = useState([]);
         
         useEffect(() => {
-            if (tenantData && tenantData.names && tenantData.age && tenantData.smoking && tenantData.email && tenantData.Similarity) {
+            if (tenantData) {
                 try {
                     const formattedTenants = Object.keys(tenantData.names).map((key, index) => ({
                         names: tenantData.names[index],
