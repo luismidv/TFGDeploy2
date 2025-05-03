@@ -13,7 +13,7 @@ export const LessorProvider = ({children}) => {
             const type = "Refresh";
             console.log("🔄 Sending login request...");
 
-            const username = lessorData?.rooms_data?.[0]?.username
+            let username = lessorData?.rooms_data?.[0]?.username
             if (username == null){
                 username = lessorData.username
             }
