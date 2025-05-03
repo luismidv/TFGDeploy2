@@ -11,7 +11,7 @@ function Home(){
 }
 
 const LessorRegisterPage = () => {
-    const { setLessorId } = useLessor();
+    const { lessorId, setLessorId } = useLessor();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
