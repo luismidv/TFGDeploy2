@@ -168,10 +168,10 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const [tenants, setTenants] = useState([]);
         
         useEffect(() => {
-            console.log(tenantData)
+            console.log("Tenant data: ", tenantData)
             if (tenantData && tenantData.names?.length) {
                 try {
-                    console.log("Tenant data: ", tenantData);
+                    
                     const formattedTenants = tenantData.names.map((_, index) => ({
                         names: tenantData.names[index],
                         age: tenantData.age[index],
