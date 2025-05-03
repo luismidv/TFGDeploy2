@@ -29,8 +29,9 @@ export function Lessor(){
         try {
           
           const lessorId = localStorage.getItem("lessorId");
+          console.log(lessorId);
           const formData = {direction,city,state,rooms,bathrooms,metters,price,description,lessorId};
-          console.log(formData);
+          console.log(lessorId);
             const response = await fetch('https://tfgserver.onrender.com/api/lessor_room/', {
                 method: 'POST',
                 headers: {
