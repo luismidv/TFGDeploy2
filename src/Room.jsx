@@ -168,6 +168,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const [tenants, setTenants] = useState([]);
         
         useEffect(() => {
+            console.log(tenantData)
             if (tenantData && tenantData.names?.length) {
                 try {
                     console.log("Tenant data: ", tenantData);
