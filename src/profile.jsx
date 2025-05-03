@@ -32,7 +32,7 @@ function Home(){
 }
 
 export function ProfileForm(){
-  const { setTenantData } = useTenant()
+  const { tenantData, setTenantData } = useTenant()
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
   console.log(token)
