@@ -50,6 +50,7 @@ export function Lessor(){
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result );
               await refreshLessorData(navigate);
+              console.log("Hasta aqui bien")
               navigate("/lessorpage", {replace: true});
               
              
