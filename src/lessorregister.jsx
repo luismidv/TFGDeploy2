@@ -117,6 +117,8 @@ const LessorRegisterPage = () => {
               const result = await response.json();
       
               setLessorId(result.lessor_data);
+              console.log("Actual lessorId: ", lessorId)
+
               console.log("🎉 Success! Response from backend:", result);
               handleSuccesfullConnection();
 
