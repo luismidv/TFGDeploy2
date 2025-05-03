@@ -168,10 +168,10 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
         const [tenants, setTenants] = useState([]);
         
         useEffect(() => {
-            if (tenantData) {
+            if (tenantData && tenantData.names?.length) {
                 try {
-                    console.log("Tenant data: ", tenantData)
-                    const formattedTenants = Object.keys(tenantData).map((key, index) => ({
+                    console.log("Tenant data: ", tenantData);
+                    const formattedTenants = tenantData.names.map((_, index) => ({
                         names: tenantData.names[index],
                         age: tenantData.age[index],
                         smoking: tenantData.smoking[index] === "Yes" ? "Smokes" : "No smoking",
