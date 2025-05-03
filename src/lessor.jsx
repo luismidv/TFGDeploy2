@@ -27,7 +27,7 @@ export function Lessor(){
         
         e.preventDefault();
         try {
-          console.log(lessorId)
+          
           const lessorId = localStorage.getItem("lessorId");
           const formData = {direction,city,state,rooms,bathrooms,metters,price,description,lessorId};
             
