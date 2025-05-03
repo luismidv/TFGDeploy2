@@ -10,6 +10,7 @@ import { useLessor } from './lessorcontext';
 
 export function Lessor(){
     const navigate = useNavigate();
+    const {lessorData} = useLessor();
     const {setLessorId,refreshLessorData } = useLessor();
     const [images, setImages] = useState('');
     const [direction, setDirection] = useState('');
@@ -27,8 +28,9 @@ export function Lessor(){
         
         e.preventDefault();
         try {
-          
-         
+      
+        console.log("Storage: ", localStorage.getItem("lessorId"))
+        console.log("Lessor data: ", lessorData)
           const formData = {direction,city,state,rooms,bathrooms,metters,price,description, lessorId:localStorage.getItem("lessorId")};
           console.log(formData)
             const response = await fetch('https://tfgserver.onrender.com/api/lessor_room/', {

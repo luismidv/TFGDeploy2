@@ -11,6 +11,7 @@ function Home(){
 }
 
 const LessorRegisterPage = () => {
+  const {setLessorData} = useLessor();
     const { lessorId, setLessorId } = useLessor();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -117,6 +118,7 @@ const LessorRegisterPage = () => {
               const result = await response.json();
       
               localStorage.setItem("lessorId", result.lessor_data)
+              setLessorData(result.lessor_data)
               console.log(localStorage.getItem("lessorId"));
               console.log("🎉 Success! Response from backend");
               handleSuccesfullConnection();
