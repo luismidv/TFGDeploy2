@@ -171,7 +171,7 @@ export function RoomInfo({label, img, rooms, metters, bathrooms,price, bedroomsv
             if (tenantData) {
                 try {
                     console.log("Tenant data: ", tenantData)
-                    const formattedTenants = tenantData.map((_, index) => ({
+                    const formattedTenants = Object.keys(tenantData).map((key, index) => ({
                         names: tenantData.names[index],
                         age: tenantData.age[index],
                         smoking: tenantData.smoking[index] === "Yes" ? "Smokes" : "No smoking",
