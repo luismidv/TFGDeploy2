@@ -86,8 +86,8 @@ export function ProfileForm(){
           
       } else {
           const result = await response.json();
-          const data = result.data
           setTenantData(result);
+          console.log("Result: ", result)
           console.log("Tenant data: ", tenantData)
           console.log("🎉 Success! Response from backend:", result);
           navigate("/home", {replace: true});
