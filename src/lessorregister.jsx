@@ -115,7 +115,8 @@ const LessorRegisterPage = () => {
               console.error("❌ Error details:", errorText);
           } else {
               const result = await response.json();
-              setLessorData(result);
+      
+              setLessorData(result.lessor_data);
               console.log("🎉 Success! Response from backend:", result);
               handleSuccesfullConnection();
 
