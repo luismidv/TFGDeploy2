@@ -24,26 +24,26 @@ export function RoomBannerCall() {
         <section id = "room-container" className="relative top-80 -left-65 md:-left-50 grid 2xl:grid-cols-2 gap-4  md:grid-cols-1 md: py-40 ">
         
 
-          <RoomBanner label = "Room at the center of Valencia" img = {roomImg}
+          <RoomBanner label = "Room in the north of Valencia" img = {roomImg}
           rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg= {profsvg} username = "PepitoVendepisos"
+          profilesvg= {profsvg} username = "Juan Pérez Rodriguez"
           directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
-          description = "Beatiful house in the center "/>
+          description = "Beatiful house north area "/>
     
-          <RoomBanner label = "Room at the center of Madrid" img = {roomImg2} 
+          <RoomBanner label = "Room in the center of Madrid" img = {roomImg2} 
           rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-          profilesvg = {profsvg} username = "PepitoVendepisos"
-          directionsvg = {directionsvg} direction="Joaquin Sorolla street"
+          profilesvg = {profsvg} username = "Dwight Johnson"
+          directionsvg = {directionsvg} direction="Gran Via"
           description = "Beatiful house in the center "/>
     
-          <RoomBanner label = "Room at the center of Seville" img= {roomImg3} 
+          <RoomBanner label = "Room in the south of Seville" img= {roomImg3} 
           rooms = "4" metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
           bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
           profilesvg= {profsvg} username = "PepitoVendepisos"
-          directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
-          description = "Beatiful house in the center "/>
+          directionsvg = {directionsvg} direction ="Av de la Palmera"
+          description = "Beatiful house south area "/>
           
         </section>
       )

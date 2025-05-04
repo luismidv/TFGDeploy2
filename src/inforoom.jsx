@@ -32,12 +32,12 @@ const RoomInfo = () => {
           </Headers>
         </LogProvider>      
     <div className = "root-room">   
-        <RoomBannerTenants label = "Room at the center of Valencia" img = {roombanner3}
+        <RoomBannerTenants label = "Room in the north of Valencia" img = {roombanner3}
             rooms = "4 " metters = "120" bathrooms = "2" price = "350 €" bathroomsvg = {bathroomsvg}
             bedroomsvg = {bedsvg}  eurosvg = {eurosvg} 
-            profilesvg= {profsvg} username = "PepitoVendepisos"
+            profilesvg= {profsvg} username = "Juan Pérez Rodriguez"
             directionsvg = {directionsvg} direction ="Joaquin Sorolla street"
-            description = "Beatiful house in the center"> 
+            description = "Beatiful house in the north"> 
         </RoomBannerTenants>
         <section className ="sec-recomend absolute 2xl:top-[50px] 2xl:left-[1100px] md:left-[250px] md:top-[600px] left-[250px] top-[1050px]">
           <RecomInfo></RecomInfo>
