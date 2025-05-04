@@ -157,7 +157,7 @@
                 }
                 }}
 >
-  Delete room
+    Delete room
 </button>
 
                 {description.split("\n").map((line,index) => (

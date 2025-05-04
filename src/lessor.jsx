@@ -52,7 +52,7 @@ export function Lessor(){
               const result = await response.json();
               console.log("🎉 Success! Response from backend:", result );
               await refreshLessorData(navigate);
-          
+              
               navigate("/lessorpage", {replace: true});
               
              
