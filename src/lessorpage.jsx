@@ -145,10 +145,10 @@
                 
                 <img className = "direction-img absolute top-[250px]" src = {directionsvg}></img>
                 <p className = "direction-p absolute top-[260px]"> {direction}</p>
-                <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[215px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => handleEditRoom(room_id, "edit", navigate, refreshLessorData)}>
+                <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[222px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => handleEditRoom(room_id, "edit", navigate, refreshLessorData)}>
                     Edit room
                 </button>
-                <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[-145px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete", navigate, refreshLessorData)}>
+                <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[-149px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete", navigate, refreshLessorData)}>
                     Delete room
                 </button>
 
