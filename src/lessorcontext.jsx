@@ -49,11 +49,12 @@ export const LessorProvider = ({children}) => {
       };
     
     const [lessorId, setLessorId] = useState(() => {
-        return localStorage.getItem("lessorId") || null;
+        const savedId = localStorage.getItem("lessorId");
+        return savedId ? JSON.parse(savedId) : null;
     });
     useEffect(() => {
         if (lessorId) {
-            localStorage.setItem("lessorId", lessorId);
+            localStorage.setItem("lessorId", JSON.stringify(lessorId));
         } else {
             localStorage.removeItem("lessorId");
         }
