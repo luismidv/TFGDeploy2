@@ -148,9 +148,17 @@
                 <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[222px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => handleEditRoom(room_id, "edit", navigate, refreshLessorData)}>
                     Edit room
                 </button>
-                <button className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[-149px] top-[-100px] text-2xl font-bold px-4 py-2" onClick={() => deleteRoom(room_id, "delete", navigate, refreshLessorData)}>
-                    Delete room
-                </button>
+                <button
+                className="w-[180px] h-[45px] bg-[#303ab2] rounded-xl text-white relative left-[-149px] top-[-100px] text-2xl font-bold px-4 py-2"
+                onClick={() => {
+                const confirmDelete = window.confirm("Are you sure you want to delete this room?");
+                if (confirmDelete) {
+                deleteRoom(room_id, "delete", navigate, refreshLessorData);
+                }
+                }}
+>
+  Delete room
+</button>
 
                 {description.split("\n").map((line,index) => (
                     <p className = "description-p absolute top-[360px]" key={index}>{line}</p>
