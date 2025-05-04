@@ -38,6 +38,7 @@ export const LessorProvider = ({children}) => {
       
             const result = await response.json();
             setLessorData(result);
+            console.log(result);
             console.log("🎉 Success! Lessor logged:", result);
             navigate("/lessorpage");
       

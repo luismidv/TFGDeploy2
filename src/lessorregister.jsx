@@ -118,7 +118,7 @@ const LessorRegisterPage = () => {
               const result = await response.json();
       
               localStorage.setItem("lessorId", result.lessor_data)
-              setLessorData(result)
+              setLessorId(result)
               console.log(localStorage.getItem("lessorId"));
               console.log("🎉 Success! Response from backend");
               handleSuccesfullConnection();
